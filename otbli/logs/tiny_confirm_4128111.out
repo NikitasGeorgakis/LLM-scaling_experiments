@@ -1,0 +1,33 @@
+================================================================================
+CORRECTED OUT-OF-SAMPLE CONFIRMATION
+================================================================================
+model        : TinyLlama/TinyLlama_v1.1
+position     : 6 (pair F7,F8)
+gamma        : 0.05
+bootstrap    : 10000
+eps_KL       : 0.05
+eps_rep      : 0.05
+IMPORTANT    : position and gamma are FIXED; no tuning is performed
+================================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+confirmation pool shape: (40, 8, 1024)
+
+================================================================================
+CONFIRMATION RESULT
+================================================================================
+base loss       = 1.80674806
+candidate loss  = 1.80670335
+paired dL       = -4.47139144e-05
+bootstrap CI95  = [-1.12263970e-04, +2.34859809e-05]
+t statistic     = -1.2715
+one-sided p     = 0.105548
+output KL       = 8.81645997e-05
+representation  = 2.01002397e-04
+base PPL        = 6.090609
+candidate PPL   = 6.090337
+NLL improvement = 0.0025%
+PPL improvement = 0.0045%
+
+VERDICT: NOT CONFIRMED
+================================================================================
+JSON -> results/tinyllama_confirmation_f7_f8_g005/confirmation_TinyLlama_v1.1_i6_g0p05.json

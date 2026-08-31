@@ -1,0 +1,137 @@
+==============================================================================
+PRE-REGISTERED CONSTANTS (fixed and printed before any evaluation)
+==============================================================================
+[OTConfig]
+{
+  "tau": 0.5,
+  "eta": 0.05,
+  "n_alt_rounds": 25,
+  "n_sinkhorn_iters": 80,
+  "tol": 0.0,
+  "gauge_fix": true,
+  "ot_dtype": "float32"
+}
+[GateConfig]
+{
+  "grid": [
+    0.0,
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1,
+    0.2,
+    0.5,
+    1.0
+  ],
+  "eps_KL": 0.05,
+  "eps_rep": 0.05,
+  "eps_eff": 0.1,
+  "lam_L": 1.0,
+  "lam_KL": 0.1,
+  "lam_rep": 0.05,
+  "lam_eff": 0.05,
+  "lam_gamma": 0.01,
+  "omega": [
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "delta": 0.001,
+  "eps_L": 1e-08,
+  "eps_h": 1e-08,
+  "refine_Q": 8
+}
+[DataConfig]
+{
+  "dataset": "monology/pile-uncopyrighted",
+  "seed": 1234,
+  "block_len": 1024,
+  "batch_size": 8,
+  "n_sel_batches": 25,
+  "n_conf_batches": 40
+}
+[ProtocolConfig]
+{
+  "top_k_positions": 2,
+  "n_boot_sel": 2000,
+  "n_boot_conf": 10000,
+  "kl_batches": 25,
+  "drift_batches": 4,
+  "latency_batches": 5,
+  "latency_repeats": 3,
+  "match_max_units": 4096
+}
+==============================================================================
+
+##############################################################################
+# TinyLlama/TinyLlama_v1.1
+##############################################################################
+`torch_dtype` is deprecated! Use `dtype` instead!
+blocks L = 22, parameters = 1100M, MLP family = gated (gauge-fixed SwiGLU atoms)
+pools: selection (25, 8, 1024)  confirmation (40, 8, 1024) (cached at results/pools_TinyLlama_v1.1_seed1234.pt; confirmation stays untouched)
+base selection loss L(0) = 1.9612 nats/token (PPL = 7.11)
+[Stage A] pair (F 1,F 2)  paired dL(gamma=1) = +0.012218 nats  CI95 = [+0.01024, +0.01423]
+[Stage A] pair (F 2,F 3)  paired dL(gamma=1) = +0.039936 nats  CI95 = [+0.03192, +0.04936]
+[Stage A] pair (F 3,F 4)  paired dL(gamma=1) = +0.028775 nats  CI95 = [+0.02536, +0.03247]
+[Stage A] pair (F 4,F 5)  paired dL(gamma=1) = +0.039496 nats  CI95 = [+0.03364, +0.04643]
+[Stage A] pair (F 5,F 6)  paired dL(gamma=1) = +0.032845 nats  CI95 = [+0.03004, +0.03607]
+[Stage A] pair (F 6,F 7)  paired dL(gamma=1) = +0.018010 nats  CI95 = [+0.01603, +0.02023]
+[Stage A] pair (F 7,F 8)  paired dL(gamma=1) = +0.030926 nats  CI95 = [+0.02764, +0.03385]
+[Stage A] pair (F 8,F 9)  paired dL(gamma=1) = +0.034647 nats  CI95 = [+0.03247, +0.03675]
+[Stage A] pair (F 9,F10)  paired dL(gamma=1) = +0.021908 nats  CI95 = [+0.01930, +0.02424]
+[Stage A] pair (F10,F11)  paired dL(gamma=1) = +0.037761 nats  CI95 = [+0.03388, +0.04286]
+[Stage A] pair (F11,F12)  paired dL(gamma=1) = +0.019394 nats  CI95 = [+0.01424, +0.02790]
+[Stage A] pair (F12,F13)  paired dL(gamma=1) = +0.012666 nats  CI95 = [+0.01119, +0.01465]
+[Stage A] pair (F13,F14)  paired dL(gamma=1) = +0.009627 nats  CI95 = [+0.00841, +0.01080]
+[Stage A] pair (F14,F15)  paired dL(gamma=1) = +0.011401 nats  CI95 = [+0.01006, +0.01301]
+[Stage A] pair (F15,F16)  paired dL(gamma=1) = +0.012482 nats  CI95 = [+0.01155, +0.01340]
+[Stage A] pair (F16,F17)  paired dL(gamma=1) = +0.019163 nats  CI95 = [+0.01779, +0.02052]
+[Stage A] pair (F17,F18)  paired dL(gamma=1) = +0.019033 nats  CI95 = [+0.01761, +0.02041]
+[Stage A] pair (F18,F19)  paired dL(gamma=1) = +0.018823 nats  CI95 = [+0.01768, +0.01999]
+[Stage A] pair (F19,F20)  paired dL(gamma=1) = +0.013706 nats  CI95 = [+0.01233, +0.01517]
+[Stage A] pair (F20,F21)  paired dL(gamma=1) = +0.023531 nats  CI95 = [+0.02110, +0.02624]
+[Stage A] pair (F21,F22)  paired dL(gamma=1) = +0.027560 nats  CI95 = [+0.02492, +0.03052]
+[Stage A] top-2 positions: (F13,F14), (F14,F15)
+[Stage B] pair (F13,F14)  D_rep(1) = 0.04008   C_eff = 0.0416 (FLOPs +4.3%, lat +4.4%, mem +4.0%, par +4.0%)
+  gamma=0          dL=+0.000e+00  KL=0.000e+00  rep=0.000e+00  J=+0.00000e+00  feasible
+  gamma=0.0001     dL=-4.768e-09  KL=1.916e-10  rep=4.008e-10  J=+2.07804e-02  feasible
+  gamma=0.0003     dL=-4.768e-09  KL=8.217e-10  rep=3.607e-09  J=+2.07804e-02  feasible
+  gamma=0.001      dL=-4.768e-09  KL=1.153e-08  rep=4.008e-08  J=+2.07805e-02  feasible
+  gamma=0.003      dL=+7.153e-08  KL=1.034e-07  rep=3.607e-07  J=+2.07811e-02  infeasible
+  gamma=0.01       dL=+8.774e-07  KL=1.144e-06  rep=4.008e-06  J=+2.07882e-02  infeasible
+  gamma=0.03       dL=+9.074e-06  KL=1.027e-05  rep=3.607e-05  J=+2.08507e-02  infeasible
+  gamma=0.1        dL=+1.052e-04  KL=1.129e-04  rep=4.008e-04  J=+2.15607e-02  infeasible
+  gamma=0.2        dL=+4.191e-04  KL=4.450e-04  rep=1.603e-03  J=+2.38873e-02  infeasible
+  gamma=0.5        dL=+2.534e-03  KL=2.668e-03  rep=1.002e-02  J=+3.99281e-02  infeasible
+  gamma=1          dL=+9.627e-03  KL=1.006e-02  rep=4.008e-02  J=+9.58940e-02  infeasible
+  refinement pass skipped: coarse best is the boundary gamma = 0
+[Stage B] pair (F14,F15)  D_rep(1) = 0.03501   C_eff = 0.0415 (FLOPs +4.3%, lat +4.3%, mem +4.0%, par +4.0%)
+  gamma=0          dL=+0.000e+00  KL=0.000e+00  rep=0.000e+00  J=+0.00000e+00  feasible
+  gamma=0.0001     dL=-1.907e-08  KL=2.813e-10  rep=3.501e-10  J=+2.07544e-02  feasible
+  gamma=0.0003     dL=+5.245e-08  KL=1.200e-09  rep=3.151e-09  J=+2.07544e-02  infeasible
+  gamma=0.001      dL=+2.337e-07  KL=1.292e-08  rep=3.501e-08  J=+2.07546e-02  infeasible
+  gamma=0.003      dL=+6.676e-07  KL=1.158e-07  rep=3.151e-07  J=+2.07554e-02  infeasible
+  gamma=0.01       dL=+3.080e-06  KL=1.286e-06  rep=3.501e-06  J=+2.07630e-02  infeasible
+  gamma=0.03       dL=+1.658e-05  KL=1.154e-05  rep=3.151e-05  J=+2.08264e-02  infeasible
+  gamma=0.1        dL=+1.395e-04  KL=1.273e-04  rep=3.501e-04  J=+2.15303e-02  infeasible
+  gamma=0.2        dL=+5.160e-04  KL=5.039e-04  rep=1.401e-03  J=+2.38259e-02  infeasible
+  gamma=0.5        dL=+3.004e-03  KL=3.059e-03  rep=8.753e-03  J=+3.96575e-02  infeasible
+  gamma=1          dL=+1.140e-02  KL=1.174e-02  rep=3.501e-02  J=+9.50708e-02  infeasible
+  refinement pass skipped: coarse best is the boundary gamma = 0
+[diag] matching at (F13,F14): 100.0% of 4096 units re-matched; mean pairing cost 4.562 -> 4.095 (10.3% reduction)
+[diag] gauge ablation (Sec. 3.6 rem. (i)): matched-cost reduction 10.3% gauge-fixed vs 10.6% raw; rematched 100.0% vs 100.0%
+[diag] drift identity at gamma=0.1: measured 3.977005e-04 vs predicted 4.008092e-04 (rel err 7.76e-03)
+[diag] gamma=1 ordering at (F13,F14): barycentric +0.0096 <= naive +0.0112 < duplicate +0.0682
+[diag] exact recovery: logits bit-equal = True, weights untouched = True
+
+>>> VERDICT [TinyLlama_v1.1]  gamma* = 0.0  ->  M+_gamma* = M exactly (safe fallback fired)
+    loss-only secondary candidate: pair (F14,F15), gamma = 0.0001, dL = -1.907e-08, CI95 = [-1.48e-07, +1.14e-07], strength = 0.15
+    results written to results/full_scale_TinyLlama_v1.1.json  (1109s)
+
+==============================================================================
+SUMMARY (cf. Table 5)
+  TinyLlama/TinyLlama_v1.1     L(0)=1.9612  screened (F13,F14)  gamma* = 0.0

@@ -1,0 +1,41 @@
+========================================================================================
+CORRECTED SMALL-GAMMA ALL-POSITION SCREEN
+========================================================================================
+model            : mistralai/Mistral-7B-v0.1
+gamma grid       : (0.0, 0.03, 0.05, 0.075, 0.1, 0.125, 0.15, 0.2, 0.3, 0.5)
+selection batches: 25
+KL batches       : 25
+drift batches    : 4
+eps_KL           : 0.05
+eps_rep          : 0.05
+C_eff            : NOT USED
+materiality delta: NOT USED
+confirmation pool: NOT EVALUATED
+========================================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.19s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  2.82s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.02s/it]
+layers=32  parameters=7241.7M  MLP family=gated
+base selection loss = 1.60141376 nats/token  PPL=4.96004
+
+----------------------------------------------------------------------------------------
+[1/1] insertion pair (F4, F5) [0-indexed i=3]
+D_rep(1) = 8.81759655e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.03       dL=-4.324e-05  CI=[-6.80e-05,-1.99e-05]  KL=1.371e-05   rep=7.936e-05  stable
+  gamma=0.05       dL=-6.082e-05  CI=[-9.89e-05,-2.38e-05]  KL=3.708e-05   rep=2.204e-04  stable
+  gamma=0.075      dL=-7.080e-05  CI=[-1.24e-04,-1.93e-05]  KL=8.089e-05   rep=4.960e-04  stable
+  gamma=0.1        dL=-6.357e-05  CI=[-1.30e-04,+1.28e-06]  KL=1.403e-04   rep=8.818e-04  stable
+  gamma=0.125      dL=-4.077e-05  CI=[-1.20e-04,+3.83e-05]  KL=2.146e-04   rep=1.378e-03  stable
+  gamma=0.15       dL=-6.776e-06  CI=[-1.00e-04,+8.80e-05]  KL=3.023e-04   rep=1.984e-03  stable
+  gamma=0.2        dL=+9.174e-05  CI=[-3.98e-05,+2.18e-04]  KL=skip        rep=3.527e-03  n/a
+  gamma=0.3        dL=+4.400e-04  CI=[+2.13e-04,+6.63e-04]  KL=skip        rep=7.936e-03  n/a
+  gamma=0.5        dL=+1.662e-03  CI=[+1.21e-03,+2.12e-03]  KL=skip        rep=2.204e-02  n/a
+  ==> best stable gamma=0.075, dL=-7.080e-05; small-gamma score min(dL/gamma)=-1.441e-03
+
+========================================================================================
+DONE mistralai/Mistral-7B-v0.1
+JSON -> results/mistral_gamma_refine_f4_f5/small_gamma_Mistral-7B-v0.1.json
+CSV  -> results/mistral_gamma_refine_f4_f5/small_gamma_Mistral-7B-v0.1.csv
+best position: (F4,F5)  gamma=0.075  dL=-7.080078e-05
+wallclock: 1484.5s
+========================================================================================

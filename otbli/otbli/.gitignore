@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+results/pools_*.pt
+results/full_scale_*.json
+results/trajectory_*step*.json
+results/confirmation_*.json
+.venv/
+logs/*.log
+logs/*.out
+results/summary_all.csv

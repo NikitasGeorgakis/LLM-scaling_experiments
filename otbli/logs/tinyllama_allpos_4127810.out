@@ -1,0 +1,298 @@
+========================================================================================
+CORRECTED SMALL-GAMMA ALL-POSITION SCREEN
+========================================================================================
+model            : TinyLlama/TinyLlama_v1.1
+gamma grid       : (0.0, 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1)
+selection batches: 25
+KL batches       : 25
+drift batches    : 4
+eps_KL           : 0.05
+eps_rep          : 0.05
+C_eff            : NOT USED
+materiality delta: NOT USED
+confirmation pool: NOT EVALUATED
+========================================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+layers=22  parameters=1100.0M  MLP family=gated
+base selection loss = 1.96119305 nats/token  PPL=7.10780
+
+----------------------------------------------------------------------------------------
+[1/21] insertion pair (F1, F2) [0-indexed i=0]
+D_rep(1) = 6.33149808e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=-4.578e-07  CI=[-1.43e-06,+1.48e-07]  KL=5.805e-10   rep=6.331e-10  stable
+  gamma=0.0003     dL=-1.330e-06  CI=[-4.13e-06,+4.20e-07]  KL=4.509e-09   rep=5.698e-09  stable
+  gamma=0.001      dL=-4.392e-06  CI=[-1.39e-05,+1.40e-06]  KL=5.076e-08   rep=6.331e-08  stable
+  gamma=0.003      dL=-1.312e-05  CI=[-4.10e-05,+4.16e-06]  KL=4.546e-07   rep=5.698e-07  stable
+  gamma=0.01       dL=-4.250e-05  CI=[-1.34e-04,+1.50e-05]  KL=5.008e-06   rep=6.331e-06  stable
+  gamma=0.03       dL=-1.175e-04  CI=[-3.81e-04,+4.84e-05]  KL=4.359e-05   rep=5.698e-05  stable
+  gamma=0.1        dL=-2.793e-04  CI=[-1.01e-03,+2.08e-04]  KL=4.205e-04   rep=6.331e-04  stable
+  ==> best stable gamma=0.1, dL=-2.793e-04; small-gamma score min(dL/gamma)=-4.578e-03
+
+----------------------------------------------------------------------------------------
+[2/21] insertion pair (F2, F3) [0-indexed i=1]
+D_rep(1) = 6.98064528e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=-1.688e-06  CI=[-5.46e-06,+3.01e-07]  KL=4.499e-09   rep=6.981e-10  stable
+  gamma=0.0003     dL=-5.093e-06  CI=[-1.62e-05,+7.72e-07]  KL=4.156e-08   rep=6.283e-09  stable
+  gamma=0.001      dL=-1.670e-05  CI=[-5.31e-05,+2.66e-06]  KL=4.583e-07   rep=6.981e-08  stable
+  gamma=0.003      dL=-4.848e-05  CI=[-1.55e-04,+7.76e-06]  KL=4.040e-06   rep=6.283e-07  stable
+  gamma=0.01       dL=-1.429e-04  CI=[-4.65e-04,+2.77e-05]  KL=4.118e-05   rep=6.981e-06  stable
+  gamma=0.03       dL=-2.913e-04  CI=[-1.03e-03,+1.04e-04]  KL=2.768e-04   rep=6.283e-05  stable
+  gamma=0.1        dL=-3.841e-05  CI=[-1.02e-03,+5.71e-04]  KL=1.394e-03   rep=6.981e-04  stable
+  ==> best stable gamma=0.03, dL=-2.913e-04; small-gamma score min(dL/gamma)=-1.698e-02
+
+----------------------------------------------------------------------------------------
+[3/21] insertion pair (F3, F4) [0-indexed i=2]
+D_rep(1) = 9.43545569e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+1.297e-06  CI=[-1.67e-07,+3.96e-06]  KL=skip        rep=9.435e-10  n/a
+  gamma=0.0003     dL=+3.862e-06  CI=[-4.91e-07,+1.18e-05]  KL=skip        rep=8.492e-09  n/a
+  gamma=0.001      dL=+1.292e-05  CI=[-1.72e-06,+3.98e-05]  KL=skip        rep=9.435e-08  n/a
+  gamma=0.003      dL=+3.955e-05  CI=[-5.01e-06,+1.21e-04]  KL=skip        rep=8.492e-07  n/a
+  gamma=0.01       dL=+1.380e-04  CI=[-1.45e-05,+4.20e-04]  KL=skip        rep=9.435e-06  n/a
+  gamma=0.03       dL=+3.993e-04  CI=[-3.22e-05,+1.19e-03]  KL=skip        rep=8.492e-05  n/a
+  gamma=0.1        dL=-1.843e-04  CI=[-1.09e-03,+3.72e-04]  KL=8.905e-04   rep=9.435e-04  stable
+  ==> best stable gamma=0.1, dL=-1.843e-04; small-gamma score min(dL/gamma)=-1.843e-03
+
+----------------------------------------------------------------------------------------
+[4/21] insertion pair (F4, F5) [0-indexed i=3]
+D_rep(1) = 1.23387516e-01
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+3.443e-06  CI=[+0.00e+00,+1.01e-05]  KL=skip        rep=1.234e-09  n/a
+  gamma=0.0003     dL=+1.061e-05  CI=[+2.86e-07,+3.06e-05]  KL=skip        rep=1.110e-08  n/a
+  gamma=0.001      dL=+3.633e-05  CI=[+6.48e-07,+1.05e-04]  KL=skip        rep=1.234e-07  n/a
+  gamma=0.003      dL=+1.189e-04  CI=[+2.48e-06,+3.45e-04]  KL=skip        rep=1.110e-06  n/a
+  gamma=0.01       dL=+5.479e-04  CI=[+1.01e-05,+1.60e-03]  KL=skip        rep=1.234e-05  n/a
+  gamma=0.03       dL=+4.608e-03  CI=[+5.02e-05,+1.37e-02]  KL=skip        rep=1.110e-04  n/a
+  gamma=0.1        dL=+3.464e-02  CI=[+3.99e-04,+1.03e-01]  KL=skip        rep=1.234e-03  n/a
+  ==> best stable gamma=0, dL=+0.000e+00; small-gamma score min(dL/gamma)=+3.443e-02
+
+----------------------------------------------------------------------------------------
+[5/21] insertion pair (F5, F6) [0-indexed i=4]
+D_rep(1) = 1.07282119e-01
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+1.173e-06  CI=[-2.57e-07,+3.72e-06]  KL=skip        rep=1.073e-09  n/a
+  gamma=0.0003     dL=+3.548e-06  CI=[-7.82e-07,+1.12e-05]  KL=skip        rep=9.655e-09  n/a
+  gamma=0.001      dL=+1.162e-05  CI=[-2.95e-06,+3.69e-05]  KL=skip        rep=1.073e-07  n/a
+  gamma=0.003      dL=+3.457e-05  CI=[-8.36e-06,+1.11e-04]  KL=skip        rep=9.655e-07  n/a
+  gamma=0.01       dL=+1.041e-04  CI=[-2.60e-05,+3.34e-04]  KL=skip        rep=1.073e-05  n/a
+  gamma=0.03       dL=+4.832e-05  CI=[-6.41e-05,+1.85e-04]  KL=skip        rep=9.655e-05  n/a
+  gamma=0.1        dL=-3.033e-04  CI=[-1.61e-03,+5.30e-04]  KL=1.364e-03   rep=1.073e-03  stable
+  ==> best stable gamma=0.1, dL=-3.033e-04; small-gamma score min(dL/gamma)=-3.033e-03
+
+----------------------------------------------------------------------------------------
+[6/21] insertion pair (F6, F7) [0-indexed i=5]
+D_rep(1) = 7.98526313e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+3.295e-06  CI=[-1.38e-07,+9.93e-06]  KL=skip        rep=7.985e-10  n/a
+  gamma=0.0003     dL=+1.009e-05  CI=[-2.19e-07,+3.02e-05]  KL=skip        rep=7.187e-09  n/a
+  gamma=0.001      dL=+3.429e-05  CI=[-7.82e-07,+1.03e-04]  KL=skip        rep=7.985e-08  n/a
+  gamma=0.003      dL=+1.098e-04  CI=[-2.27e-06,+3.28e-04]  KL=skip        rep=7.187e-07  n/a
+  gamma=0.01       dL=+4.111e-04  CI=[-6.33e-06,+1.23e-03]  KL=skip        rep=7.985e-06  n/a
+  gamma=0.03       dL=-2.529e-04  CI=[-8.48e-04,+7.28e-05]  KL=5.453e-04   rep=7.187e-05  stable
+  gamma=0.1        dL=-4.324e-04  CI=[-1.87e-03,+3.84e-04]  KL=1.564e-03   rep=7.985e-04  stable
+  ==> best stable gamma=0.1, dL=-4.324e-04; small-gamma score min(dL/gamma)=-8.431e-03
+
+----------------------------------------------------------------------------------------
+[7/21] insertion pair (F7, F8) [0-indexed i=6]
+D_rep(1) = 7.91949760e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+1.317e-05  CI=[-4.43e-07,+4.02e-05]  KL=skip        rep=7.919e-10  n/a
+  gamma=0.0003     dL=+3.850e-05  CI=[-1.56e-06,+1.18e-04]  KL=skip        rep=7.128e-09  n/a
+  gamma=0.001      dL=+1.148e-04  CI=[-5.32e-06,+3.52e-04]  KL=skip        rep=7.919e-08  n/a
+  gamma=0.003      dL=+1.748e-04  CI=[-1.50e-05,+5.47e-04]  KL=skip        rep=7.128e-07  n/a
+  gamma=0.01       dL=-3.550e-04  CI=[-1.02e-03,-1.14e-05]  KL=4.183e-04   rep=7.919e-06  stable
+  gamma=0.03       dL=-5.494e-04  CI=[-1.54e-03,-1.57e-05]  KL=1.134e-03   rep=7.128e-05  stable
+  gamma=0.1        dL=-7.635e-04  CI=[-2.38e-03,+1.71e-04]  KL=1.774e-03   rep=7.919e-04  stable
+  ==> best stable gamma=0.1, dL=-7.635e-04; small-gamma score min(dL/gamma)=-3.550e-02
+
+----------------------------------------------------------------------------------------
+[8/21] insertion pair (F8, F9) [0-indexed i=7]
+D_rep(1) = 7.71753881e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=-8.726e-07  CI=[-1.51e-06,-4.48e-07]  KL=1.459e-08   rep=7.718e-10  stable
+  gamma=0.0003     dL=-2.747e-06  CI=[-5.01e-06,-1.35e-06]  KL=1.320e-07   rep=6.946e-09  stable
+  gamma=0.001      dL=-1.109e-05  CI=[-2.24e-05,-4.36e-06]  KL=1.499e-06   rep=7.718e-08  stable
+  gamma=0.003      dL=-4.925e-05  CI=[-1.16e-04,-1.31e-05]  KL=1.459e-05   rep=6.946e-07  stable
+  gamma=0.01       dL=-2.640e-04  CI=[-6.90e-04,-4.15e-05]  KL=1.721e-04   rep=7.718e-06  stable
+  gamma=0.03       dL=-6.036e-04  CI=[-1.56e-03,-1.01e-04]  KL=7.107e-04   rep=6.946e-05  stable
+  gamma=0.1        dL=-7.090e-04  CI=[-1.85e-03,-5.45e-05]  KL=1.704e-03   rep=7.718e-04  stable
+  ==> best stable gamma=0.1, dL=-7.090e-04; small-gamma score min(dL/gamma)=-2.640e-02
+
+----------------------------------------------------------------------------------------
+[9/21] insertion pair (F9, F10) [0-indexed i=8]
+D_rep(1) = 5.54320384e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=-4.244e-07  CI=[-6.77e-07,-1.72e-07]  KL=2.124e-10   rep=5.543e-10  stable
+  gamma=0.0003     dL=-1.235e-06  CI=[-2.00e-06,-4.72e-07]  KL=3.061e-09   rep=4.989e-09  stable
+  gamma=0.001      dL=-4.106e-06  CI=[-6.57e-06,-1.73e-06]  KL=3.092e-08   rep=5.543e-08  stable
+  gamma=0.003      dL=-1.216e-05  CI=[-2.00e-05,-5.01e-06]  KL=2.786e-07   rep=4.989e-07  stable
+  gamma=0.01       dL=-3.925e-05  CI=[-6.52e-05,-1.51e-05]  KL=3.091e-06   rep=5.543e-06  stable
+  gamma=0.03       dL=-1.033e-04  CI=[-1.82e-04,-2.95e-05]  KL=2.772e-05   rep=4.989e-05  stable
+  gamma=0.1        dL=-1.755e-04  CI=[-4.39e-04,+6.06e-05]  KL=3.028e-04   rep=5.543e-04  stable
+  ==> best stable gamma=0.1, dL=-1.755e-04; small-gamma score min(dL/gamma)=-4.244e-03
+
+----------------------------------------------------------------------------------------
+[10/21] insertion pair (F10, F11) [0-indexed i=9]
+D_rep(1) = 7.30596557e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+7.153e-08  CI=[-2.24e-07,+4.72e-07]  KL=skip        rep=7.306e-10  n/a
+  gamma=0.0003     dL=+9.537e-08  CI=[-6.68e-07,+1.11e-06]  KL=skip        rep=6.575e-09  n/a
+  gamma=0.001      dL=+2.337e-07  CI=[-2.30e-06,+3.73e-06]  KL=skip        rep=7.306e-08  n/a
+  gamma=0.003      dL=+9.775e-07  CI=[-6.88e-06,+1.18e-05]  KL=skip        rep=6.575e-07  n/a
+  gamma=0.01       dL=+5.755e-06  CI=[-1.98e-05,+4.15e-05]  KL=skip        rep=7.306e-06  n/a
+  gamma=0.03       dL=+3.759e-05  CI=[-4.17e-05,+1.41e-04]  KL=skip        rep=6.575e-05  n/a
+  gamma=0.1        dL=+3.633e-04  CI=[+1.04e-04,+7.36e-04]  KL=skip        rep=7.306e-04  n/a
+  ==> best stable gamma=0, dL=+0.000e+00; small-gamma score min(dL/gamma)=+2.337e-04
+
+----------------------------------------------------------------------------------------
+[11/21] insertion pair (F11, F12) [0-indexed i=10]
+D_rep(1) = 5.30545805e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+8.583e-08  CI=[-1.38e-07,+4.05e-07]  KL=skip        rep=5.305e-10  n/a
+  gamma=0.0003     dL=+7.629e-08  CI=[-5.72e-07,+9.78e-07]  KL=skip        rep=4.775e-09  n/a
+  gamma=0.001      dL=+3.529e-07  CI=[-1.70e-06,+3.28e-06]  KL=skip        rep=5.305e-08  n/a
+  gamma=0.003      dL=+1.116e-06  CI=[-5.10e-06,+9.93e-06]  KL=skip        rep=4.775e-07  n/a
+  gamma=0.01       dL=+4.878e-06  CI=[-1.58e-05,+3.44e-05]  KL=skip        rep=5.305e-06  n/a
+  gamma=0.03       dL=+2.547e-05  CI=[-3.76e-05,+1.18e-04]  KL=skip        rep=4.775e-05  n/a
+  gamma=0.1        dL=+2.110e-04  CI=[-8.60e-06,+5.50e-04]  KL=skip        rep=5.305e-04  n/a
+  ==> best stable gamma=0, dL=+0.000e+00; small-gamma score min(dL/gamma)=+2.543e-04
+
+----------------------------------------------------------------------------------------
+[12/21] insertion pair (F12, F13) [0-indexed i=11]
+D_rep(1) = 5.16511491e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+3.815e-08  CI=[-9.54e-08,+1.96e-07]  KL=skip        rep=5.165e-10  n/a
+  gamma=0.0003     dL=+2.384e-08  CI=[-3.29e-07,+4.91e-07]  KL=skip        rep=4.649e-09  n/a
+  gamma=0.001      dL=-3.338e-08  CI=[-1.21e-06,+1.44e-06]  KL=1.451e-08   rep=5.165e-08  stable
+  gamma=0.003      dL=-1.383e-07  CI=[-3.71e-06,+4.22e-06]  KL=1.307e-07   rep=4.649e-07  stable
+  gamma=0.01       dL=+2.575e-07  CI=[-1.15e-05,+1.52e-05]  KL=skip        rep=5.165e-06  n/a
+  gamma=0.03       dL=+9.155e-06  CI=[-2.60e-05,+5.26e-05]  KL=skip        rep=4.649e-05  n/a
+  gamma=0.1        dL=+1.261e-04  CI=[+7.51e-06,+2.79e-04]  KL=skip        rep=5.165e-04  n/a
+  ==> best stable gamma=0.003, dL=-1.383e-07; small-gamma score min(dL/gamma)=-4.609e-05
+
+----------------------------------------------------------------------------------------
+[13/21] insertion pair (F13, F14) [0-indexed i=12]
+D_rep(1) = 4.00809245e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=-4.768e-09  CI=[-1.05e-07,+9.06e-08]  KL=1.916e-10   rep=4.008e-10  stable
+  gamma=0.0003     dL=-4.768e-09  CI=[-3.10e-07,+3.10e-07]  KL=8.217e-10   rep=3.607e-09  stable
+  gamma=0.001      dL=-4.768e-09  CI=[-1.07e-06,+1.16e-06]  KL=1.153e-08   rep=4.008e-08  stable
+  gamma=0.003      dL=+7.153e-08  CI=[-3.14e-06,+3.35e-06]  KL=skip        rep=3.607e-07  n/a
+  gamma=0.01       dL=+8.774e-07  CI=[-9.68e-06,+1.25e-05]  KL=skip        rep=4.008e-06  n/a
+  gamma=0.03       dL=+9.074e-06  CI=[-2.21e-05,+4.16e-05]  KL=skip        rep=3.607e-05  n/a
+  gamma=0.1        dL=+1.052e-04  CI=[+1.22e-06,+2.15e-04]  KL=skip        rep=4.008e-04  n/a
+  ==> best stable gamma=0.0001, dL=-4.768e-09; small-gamma score min(dL/gamma)=-4.768e-05
+
+----------------------------------------------------------------------------------------
+[14/21] insertion pair (F14, F15) [0-indexed i=13]
+D_rep(1) = 3.50139122e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=-1.907e-08  CI=[-1.53e-07,+1.19e-07]  KL=2.813e-10   rep=3.501e-10  stable
+  gamma=0.0003     dL=+5.245e-08  CI=[-3.15e-07,+4.01e-07]  KL=skip        rep=3.151e-09  n/a
+  gamma=0.001      dL=+2.337e-07  CI=[-9.16e-07,+1.32e-06]  KL=skip        rep=3.501e-08  n/a
+  gamma=0.003      dL=+6.676e-07  CI=[-2.83e-06,+3.80e-06]  KL=skip        rep=3.151e-07  n/a
+  gamma=0.01       dL=+3.080e-06  CI=[-8.31e-06,+1.37e-05]  KL=skip        rep=3.501e-06  n/a
+  gamma=0.03       dL=+1.658e-05  CI=[-1.82e-05,+4.86e-05]  KL=skip        rep=3.151e-05  n/a
+  gamma=0.1        dL=+1.395e-04  CI=[+2.41e-05,+2.49e-04]  KL=skip        rep=3.501e-04  n/a
+  ==> best stable gamma=0.0001, dL=-1.907e-08; small-gamma score min(dL/gamma)=-1.907e-04
+
+----------------------------------------------------------------------------------------
+[15/21] insertion pair (F15, F16) [0-indexed i=14]
+D_rep(1) = 4.19146400e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=-8.583e-08  CI=[-2.24e-07,+3.81e-08]  KL=5.752e-10   rep=4.191e-10  stable
+  gamma=0.0003     dL=-3.815e-08  CI=[-3.48e-07,+2.62e-07]  KL=1.258e-09   rep=3.772e-09  stable
+  gamma=0.001      dL=-3.052e-07  CI=[-1.22e-06,+6.58e-07]  KL=1.521e-08   rep=4.191e-08  stable
+  gamma=0.003      dL=-8.631e-07  CI=[-3.54e-06,+1.82e-06]  KL=1.352e-07   rep=3.772e-07  stable
+  gamma=0.01       dL=-2.117e-06  CI=[-1.12e-05,+6.94e-06]  KL=1.501e-06   rep=4.191e-06  stable
+  gamma=0.03       dL=+2.084e-06  CI=[-2.47e-05,+3.04e-05]  KL=skip        rep=3.772e-05  n/a
+  gamma=0.1        dL=+1.066e-04  CI=[+1.82e-05,+1.95e-04]  KL=skip        rep=4.191e-04  n/a
+  ==> best stable gamma=0.01, dL=-2.117e-06; small-gamma score min(dL/gamma)=-8.583e-04
+
+----------------------------------------------------------------------------------------
+[16/21] insertion pair (F16, F17) [0-indexed i=15]
+D_rep(1) = 4.78418842e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+4.768e-09  CI=[-1.34e-07,+1.48e-07]  KL=skip        rep=4.784e-10  n/a
+  gamma=0.0003     dL=-1.431e-08  CI=[-3.15e-07,+2.91e-07]  KL=2.217e-09   rep=4.306e-09  stable
+  gamma=0.001      dL=+3.815e-08  CI=[-1.03e-06,+1.11e-06]  KL=skip        rep=4.784e-08  n/a
+  gamma=0.003      dL=-1.621e-07  CI=[-3.39e-06,+2.97e-06]  KL=2.000e-07   rep=4.306e-07  stable
+  gamma=0.01       dL=+9.251e-07  CI=[-9.93e-06,+1.14e-05]  KL=skip        rep=4.784e-06  n/a
+  gamma=0.03       dL=+1.568e-05  CI=[-1.73e-05,+4.66e-05]  KL=skip        rep=4.306e-05  n/a
+  gamma=0.1        dL=+2.031e-04  CI=[+9.73e-05,+3.05e-04]  KL=skip        rep=4.784e-04  n/a
+  ==> best stable gamma=0.003, dL=-1.621e-07; small-gamma score min(dL/gamma)=-5.404e-05
+
+----------------------------------------------------------------------------------------
+[17/21] insertion pair (F17, F18) [0-indexed i=16]
+D_rep(1) = 4.73843701e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+4.292e-08  CI=[-1.14e-07,+2.00e-07]  KL=skip        rep=4.738e-10  n/a
+  gamma=0.0003     dL=+9.537e-08  CI=[-2.86e-07,+4.34e-07]  KL=skip        rep=4.265e-09  n/a
+  gamma=0.001      dL=+3.147e-07  CI=[-8.16e-07,+1.43e-06]  KL=skip        rep=4.738e-08  n/a
+  gamma=0.003      dL=+9.489e-07  CI=[-2.47e-06,+4.32e-06]  KL=skip        rep=4.265e-07  n/a
+  gamma=0.01       dL=+4.668e-06  CI=[-6.53e-06,+1.59e-05]  KL=skip        rep=4.738e-06  n/a
+  gamma=0.03       dL=+2.705e-05  CI=[-6.48e-06,+6.07e-05]  KL=skip        rep=4.265e-05  n/a
+  gamma=0.1        dL=+2.400e-04  CI=[+1.26e-04,+3.52e-04]  KL=skip        rep=4.738e-04  n/a
+  ==> best stable gamma=0, dL=+0.000e+00; small-gamma score min(dL/gamma)=+3.147e-04
+
+----------------------------------------------------------------------------------------
+[18/21] insertion pair (F18, F19) [0-indexed i=17]
+D_rep(1) = 3.58614083e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+3.815e-08  CI=[-1.05e-07,+1.76e-07]  KL=skip        rep=3.586e-10  n/a
+  gamma=0.0003     dL=+1.526e-07  CI=[-1.48e-07,+4.29e-07]  KL=skip        rep=3.228e-09  n/a
+  gamma=0.001      dL=+6.533e-07  CI=[-3.58e-07,+1.59e-06]  KL=skip        rep=3.586e-08  n/a
+  gamma=0.003      dL=+2.003e-06  CI=[-9.73e-07,+4.84e-06]  KL=skip        rep=3.228e-07  n/a
+  gamma=0.01       dL=+8.054e-06  CI=[-1.79e-06,+1.75e-05]  KL=skip        rep=3.586e-06  n/a
+  gamma=0.03       dL=+3.616e-05  CI=[+7.49e-06,+6.41e-05]  KL=skip        rep=3.228e-05  n/a
+  gamma=0.1        dL=+2.596e-04  CI=[+1.67e-04,+3.47e-04]  KL=skip        rep=3.586e-04  n/a
+  ==> best stable gamma=0, dL=+0.000e+00; small-gamma score min(dL/gamma)=+3.815e-04
+
+----------------------------------------------------------------------------------------
+[19/21] insertion pair (F19, F20) [0-indexed i=18]
+D_rep(1) = 3.11184307e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+1.431e-08  CI=[-9.54e-08,+1.24e-07]  KL=skip        rep=3.112e-10  n/a
+  gamma=0.0003     dL=-1.240e-07  CI=[-4.24e-07,+2.00e-07]  KL=1.361e-09   rep=2.801e-09  stable
+  gamma=0.001      dL=-3.672e-07  CI=[-1.37e-06,+6.25e-07]  KL=1.615e-08   rep=3.112e-08  stable
+  gamma=0.003      dL=-1.168e-06  CI=[-4.11e-06,+1.74e-06]  KL=1.426e-07   rep=2.801e-07  stable
+  gamma=0.01       dL=-2.971e-06  CI=[-1.24e-05,+6.71e-06]  KL=1.586e-06   rep=3.112e-06  stable
+  gamma=0.03       dL=+1.574e-07  CI=[-2.98e-05,+2.98e-05]  KL=skip        rep=2.801e-05  n/a
+  gamma=0.1        dL=+1.066e-04  CI=[+1.05e-05,+2.07e-04]  KL=skip        rep=3.112e-04  n/a
+  ==> best stable gamma=0.01, dL=-2.971e-06; small-gamma score min(dL/gamma)=-4.133e-04
+
+----------------------------------------------------------------------------------------
+[20/21] insertion pair (F20, F21) [0-indexed i=19]
+D_rep(1) = 3.40101868e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+1.335e-07  CI=[-9.54e-08,+3.86e-07]  KL=skip        rep=3.401e-10  n/a
+  gamma=0.0003     dL=+4.816e-07  CI=[-5.72e-08,+1.10e-06]  KL=skip        rep=3.061e-09  n/a
+  gamma=0.001      dL=+1.416e-06  CI=[-2.91e-07,+3.52e-06]  KL=skip        rep=3.401e-08  n/a
+  gamma=0.003      dL=+4.301e-06  CI=[-7.44e-07,+1.04e-05]  KL=skip        rep=3.061e-07  n/a
+  gamma=0.01       dL=+1.565e-05  CI=[-1.48e-06,+3.60e-05]  KL=skip        rep=3.401e-06  n/a
+  gamma=0.03       dL=+6.054e-05  CI=[+9.71e-06,+1.22e-04]  KL=skip        rep=3.061e-05  n/a
+  gamma=0.1        dL=+3.585e-04  CI=[+1.82e-04,+5.72e-04]  KL=skip        rep=3.401e-04  n/a
+  ==> best stable gamma=0, dL=+0.000e+00; small-gamma score min(dL/gamma)=+1.335e-03
+
+----------------------------------------------------------------------------------------
+[21/21] insertion pair (F21, F22) [0-indexed i=20]
+D_rep(1) = 4.75422852e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=-1.335e-07  CI=[-3.15e-07,+5.72e-08]  KL=4.325e-10   rep=4.754e-10  stable
+  gamma=0.0003     dL=-1.192e-07  CI=[-5.77e-07,+4.15e-07]  KL=2.719e-09   rep=4.279e-09  stable
+  gamma=0.001      dL=-7.057e-07  CI=[-2.15e-06,+9.30e-07]  KL=2.851e-08   rep=4.754e-08  stable
+  gamma=0.003      dL=-1.731e-06  CI=[-6.40e-06,+3.36e-06]  KL=2.571e-07   rep=4.279e-07  stable
+  gamma=0.01       dL=-4.086e-06  CI=[-1.95e-05,+1.21e-05]  KL=2.854e-06   rep=4.754e-06  stable
+  gamma=0.03       dL=+4.325e-06  CI=[-4.25e-05,+5.40e-05]  KL=skip        rep=4.279e-05  n/a
+  gamma=0.1        dL=+2.082e-04  CI=[+4.69e-05,+3.82e-04]  KL=skip        rep=4.754e-04  n/a
+  ==> best stable gamma=0.01, dL=-4.086e-06; small-gamma score min(dL/gamma)=-1.335e-03
+
+========================================================================================
+DONE TinyLlama/TinyLlama_v1.1
+JSON -> results/tinyllama_allpos_corrected/small_gamma_TinyLlama_v1.1.json
+CSV  -> results/tinyllama_allpos_corrected/small_gamma_TinyLlama_v1.1.csv
+best position: (F7,F8)  gamma=0.1  dL=-7.634974e-04
+wallclock: 3038.7s
+========================================================================================

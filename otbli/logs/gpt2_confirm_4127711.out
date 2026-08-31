@@ -1,0 +1,34 @@
+================================================================================
+CORRECTED OUT-OF-SAMPLE CONFIRMATION
+================================================================================
+model        : openai-community/gpt2-large
+position     : 11 (pair F12,F13)
+gamma        : 0.3
+bootstrap    : 10000
+eps_KL       : 0.05
+eps_rep      : 0.05
+IMPORTANT    : position and gamma are FIXED; no tuning is performed
+================================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+confirmation pool shape: (40, 8, 1024)
+`loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+
+================================================================================
+CONFIRMATION RESULT
+================================================================================
+base loss       = 2.53869485
+candidate loss  = 2.53712139
+paired dL       = -1.57345831e-03
+bootstrap CI95  = [-3.69243920e-03, -2.21170485e-06]
+t statistic     = -1.6429
+one-sided p     = 0.0542177
+output KL       = 2.67281427e-03
+representation  = 1.98235111e-03
+base PPL        = 12.663133
+candidate PPL   = 12.643224
+NLL improvement = 0.0620%
+PPL improvement = 0.1572%
+
+VERDICT: CONFIRMED OUT OF SAMPLE
+================================================================================
+JSON -> results/gpt2_confirmation_f12_f13_g03/confirmation_gpt2-large_i11_g0p3.json

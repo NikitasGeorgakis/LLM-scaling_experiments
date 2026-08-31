@@ -1,0 +1,5 @@
+torch 2.6.0+cu124 | gpu: NVIDIA H100
+[run  ] openai-community/gpt2-large
+        $ /scratch/georgaki/otbli-venv/bin/python scripts/run_full_scale.py --models openai-community/gpt2-large --device cuda --out results
+        log: logs/full_scale_gpt2-large.log
+slurmstepd: error: *** JOB 4087243 ON kh013 CANCELLED AT 2026-08-17T02:06:04 ***

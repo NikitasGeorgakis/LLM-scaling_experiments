@@ -1,0 +1,23 @@
+torch 2.6.0+cu124 | gpu: NVIDIA H100
+[run  ] openai-community/gpt2-large
+        $ /scratch/georgaki/otbli-venv/bin/python scripts/run_full_scale.py --models openai-community/gpt2-large --device cuda --out results
+        log: logs/full_scale_gpt2-large.log
+[done ] openai-community/gpt2-large: ok  (1177s)
+[run  ] TinyLlama/TinyLlama_v1.1
+        $ /scratch/georgaki/otbli-venv/bin/python scripts/run_full_scale.py --models TinyLlama/TinyLlama_v1.1 --device cuda --out results
+        log: logs/full_scale_TinyLlama_v1.1.log
+[done ] TinyLlama/TinyLlama_v1.1: ok  (1112s)
+[run  ] mistralai/Mistral-7B-v0.1
+        $ /scratch/georgaki/otbli-venv/bin/python scripts/run_full_scale.py --models mistralai/Mistral-7B-v0.1 --device cuda --out results
+        log: logs/full_scale_Mistral-7B-v0.1.log
+[done ] mistralai/Mistral-7B-v0.1: ok  (7429s)
+
+combined summary -> results/summary_all.csv
+  openai-community/gpt2-large  L(0)=2.9718  (F30,F31)  gamma* = 0.0
+  TinyLlama/TinyLlama_v1.1     L(0)=1.9612  (F13,F14)  gamma* = 0.0
+  mistralai/Mistral-7B-v0.1    L(0)=1.6014  (F27,F28)  gamma* = 0.0
+
+==============================================================================
+  openai-community/gpt2-large              ok
+  TinyLlama/TinyLlama_v1.1                 ok
+  mistralai/Mistral-7B-v0.1                ok

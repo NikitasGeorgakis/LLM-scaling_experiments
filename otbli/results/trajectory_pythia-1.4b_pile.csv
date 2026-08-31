@@ -1,0 +1,10 @@
+step,gamma,delta_L,tau,model,dataset
+step512,0.0,0.0,0.5,EleutherAI/pythia-1.4b,pile
+step1000,0.0,0.0,0.5,EleutherAI/pythia-1.4b,pile
+step2000,0.0,0.0,0.5,EleutherAI/pythia-1.4b,pile
+step4000,0.0,0.0,0.5,EleutherAI/pythia-1.4b,pile
+step8000,0.0,0.0,0.5,EleutherAI/pythia-1.4b,pile
+step16000,0.0,0.0,0.5,EleutherAI/pythia-1.4b,pile
+step32000,0.0,0.0,0.5,EleutherAI/pythia-1.4b,pile
+step64000,0.0,0.0,0.5,EleutherAI/pythia-1.4b,pile
+step143000,0.0,0.0,0.5,EleutherAI/pythia-1.4b,pile

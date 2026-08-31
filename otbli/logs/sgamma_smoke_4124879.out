@@ -1,0 +1,52 @@
+========================================================================================
+CORRECTED SMALL-GAMMA ALL-POSITION SCREEN
+========================================================================================
+model            : openai-community/gpt2-large
+gamma grid       : (0.0, 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1)
+selection batches: 2
+KL batches       : 2
+drift batches    : 2
+eps_KL           : 0.05
+eps_rep          : 0.05
+C_eff            : NOT USED
+materiality delta: NOT USED
+confirmation pool: NOT EVALUATED
+========================================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+layers=36  parameters=774.0M  MLP family=gpt2
+`loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+base selection loss = 3.09594095 nats/token  PPL=22.10803
+
+----------------------------------------------------------------------------------------
+[1/2] insertion pair (F1, F2) [0-indexed i=0]
+D_rep(1) = 3.49151582e-01
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+3.695e-06  CI=[-9.54e-07,+8.34e-06]  KL=skip        rep=3.492e-09  n/a
+  gamma=0.0003     dL=+1.097e-05  CI=[-3.81e-06,+2.57e-05]  KL=skip        rep=3.142e-08  n/a
+  gamma=0.001      dL=+3.648e-05  CI=[-1.07e-05,+8.37e-05]  KL=skip        rep=3.492e-07  n/a
+  gamma=0.003      dL=+1.025e-04  CI=[-3.24e-05,+2.37e-04]  KL=skip        rep=3.142e-06  n/a
+  gamma=0.01       dL=+2.747e-04  CI=[-1.05e-04,+6.54e-04]  KL=skip        rep=3.492e-05  n/a
+  gamma=0.03       dL=+5.995e-04  CI=[-3.00e-04,+1.50e-03]  KL=skip        rep=3.142e-04  n/a
+  gamma=0.1        dL=+1.416e-03  CI=[-8.40e-04,+3.67e-03]  KL=skip        rep=3.492e-03  n/a
+  ==> best stable gamma=0, dL=+0.000e+00; small-gamma score min(dL/gamma)=+1.416e-02
+
+----------------------------------------------------------------------------------------
+[2/2] insertion pair (F2, F3) [0-indexed i=1]
+D_rep(1) = 7.55921304e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=-5.960e-07  CI=[-7.15e-07,-4.77e-07]  KL=4.657e-09   rep=7.559e-10  stable
+  gamma=0.0003     dL=-2.503e-06  CI=[-2.62e-06,-2.38e-06]  KL=3.280e-08   rep=6.803e-09  stable
+  gamma=0.001      dL=-7.272e-06  CI=[-8.82e-06,-5.72e-06]  KL=3.479e-07   rep=7.559e-08  stable
+  gamma=0.003      dL=-1.931e-05  CI=[-2.19e-05,-1.67e-05]  KL=2.836e-06   rep=6.803e-07  stable
+  gamma=0.01       dL=-5.245e-05  CI=[-5.41e-05,-5.08e-05]  KL=2.458e-05   rep=7.559e-06  stable
+  gamma=0.03       dL=-8.297e-05  CI=[-1.58e-04,-7.87e-06]  KL=1.700e-04   rep=6.803e-05  stable
+  gamma=0.1        dL=-2.522e-04  CI=[-4.73e-04,-3.12e-05]  KL=1.088e-03   rep=7.559e-04  stable
+  ==> best stable gamma=0.1, dL=-2.522e-04; small-gamma score min(dL/gamma)=-8.345e-03
+
+========================================================================================
+DONE openai-community/gpt2-large
+JSON -> results/small_gamma_smoke/small_gamma_gpt2-large.json
+CSV  -> results/small_gamma_smoke/small_gamma_gpt2-large.csv
+best position: (F2,F3)  gamma=0.1  dL=-2.522469e-04
+wallclock: 45.9s
+========================================================================================

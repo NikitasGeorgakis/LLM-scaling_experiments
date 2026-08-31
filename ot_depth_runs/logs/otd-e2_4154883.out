@@ -1,0 +1,11 @@
+=== pythia-410m ===
+`torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/home/georgaki/ot_depth_runs/run_screen.py", line 216, in <module>
+    main()
+  File "/home/georgaki/ot_depth_runs/run_screen.py", line 70, in main
+    pool = od.pack_pool(a.pool, tok, a.n_batches)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/georgaki/ot_depth_runs/otdepth.py", line 372, in pack_pool
+    raise RuntimeError(f"pool {jsonl_path}: {len(ids)} tokens < {need};"
+RuntimeError: pool /home/georgaki/ot_depth_runs/pools/pool_A.jsonl: 182967 tokens < 204800; add documents to the pool

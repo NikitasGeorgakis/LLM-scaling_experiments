@@ -1,0 +1,94 @@
+[resume] incomplete result found at results/mistral_allpos_corrected/small_gamma_Mistral-7B-v0.1.json; completed positions will be skipped
+========================================================================================
+CORRECTED SMALL-GAMMA ALL-POSITION SCREEN
+========================================================================================
+model            : mistralai/Mistral-7B-v0.1
+gamma grid       : (0.0, 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1)
+selection batches: 25
+KL batches       : 25
+drift batches    : 4
+eps_KL           : 0.05
+eps_rep          : 0.05
+C_eff            : NOT USED
+materiality delta: NOT USED
+confirmation pool: NOT EVALUATED
+========================================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.64s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.07s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.31s/it]
+layers=32  parameters=7241.7M  MLP family=gated
+base selection loss = 1.60141376 nats/token  PPL=4.96004
+[resume] skip completed insertion pair (F1,F2)
+[resume] skip completed insertion pair (F2,F3)
+[resume] skip completed insertion pair (F3,F4)
+[resume] skip completed insertion pair (F4,F5)
+[resume] skip completed insertion pair (F5,F6)
+[resume] skip completed insertion pair (F6,F7)
+[resume] skip completed insertion pair (F7,F8)
+[resume] skip completed insertion pair (F8,F9)
+[resume] skip completed insertion pair (F9,F10)
+[resume] skip completed insertion pair (F10,F11)
+[resume] skip completed insertion pair (F11,F12)
+[resume] skip completed insertion pair (F12,F13)
+[resume] skip completed insertion pair (F13,F14)
+[resume] skip completed insertion pair (F14,F15)
+[resume] skip completed insertion pair (F15,F16)
+[resume] skip completed insertion pair (F16,F17)
+[resume] skip completed insertion pair (F17,F18)
+[resume] skip completed insertion pair (F18,F19)
+[resume] skip completed insertion pair (F19,F20)
+[resume] skip completed insertion pair (F20,F21)
+[resume] skip completed insertion pair (F21,F22)
+[resume] skip completed insertion pair (F22,F23)
+[resume] skip completed insertion pair (F23,F24)
+[resume] skip completed insertion pair (F24,F25)
+[resume] skip completed insertion pair (F25,F26)
+[resume] skip completed insertion pair (F26,F27)
+[resume] skip completed insertion pair (F27,F28)
+[resume] skip completed insertion pair (F28,F29)
+
+----------------------------------------------------------------------------------------
+[29/31] insertion pair (F29, F30) [0-indexed i=28]
+D_rep(1) = 1.94676556e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=-9.537e-08  CI=[-2.34e-07,+4.29e-08]  KL=2.533e-10   rep=1.947e-10  stable
+  gamma=0.0003     dL=-9.060e-08  CI=[-3.15e-07,+1.24e-07]  KL=5.073e-10   rep=1.752e-09  stable
+  gamma=0.001      dL=-6.676e-07  CI=[-1.32e-06,-8.11e-08]  KL=5.574e-09   rep=1.947e-08  stable
+  gamma=0.003      dL=-1.836e-06  CI=[-3.62e-06,-1.43e-07]  KL=4.995e-08   rep=1.752e-07  stable
+  gamma=0.01       dL=-6.075e-06  CI=[-1.21e-05,-4.82e-07]  KL=5.487e-07   rep=1.947e-06  stable
+  gamma=0.03       dL=-1.631e-05  CI=[-3.35e-05,+2.02e-07]  KL=4.852e-06   rep=1.752e-05  stable
+  gamma=0.1        dL=-2.638e-05  CI=[-7.81e-05,+2.46e-05]  KL=5.198e-05   rep=1.947e-04  stable
+  ==> best stable gamma=0.1, dL=-2.638e-05; small-gamma score min(dL/gamma)=-9.537e-04
+
+----------------------------------------------------------------------------------------
+[30/31] insertion pair (F30, F31) [0-indexed i=29]
+D_rep(1) = 2.19829502e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=-5.722e-08  CI=[-1.86e-07,+7.15e-08]  KL=1.621e-10   rep=2.198e-10  stable
+  gamma=0.0003     dL=-1.717e-07  CI=[-4.34e-07,+8.58e-08]  KL=6.828e-10   rep=1.978e-09  stable
+  gamma=0.001      dL=-6.676e-07  CI=[-1.41e-06,+2.38e-08]  KL=7.812e-09   rep=2.198e-08  stable
+  gamma=0.003      dL=-2.079e-06  CI=[-4.24e-06,-3.77e-08]  KL=6.715e-08   rep=1.978e-07  stable
+  gamma=0.01       dL=-6.380e-06  CI=[-1.35e-05,+2.48e-07]  KL=7.479e-07   rep=2.198e-06  stable
+  gamma=0.03       dL=-1.451e-05  CI=[-3.47e-05,+4.76e-06]  KL=6.745e-06   rep=1.978e-05  stable
+  gamma=0.1        dL=+1.767e-05  CI=[-4.34e-05,+7.87e-05]  KL=skip        rep=2.198e-04  n/a
+  ==> best stable gamma=0.03, dL=-1.451e-05; small-gamma score min(dL/gamma)=-6.930e-04
+
+----------------------------------------------------------------------------------------
+[31/31] insertion pair (F31, F32) [0-indexed i=30]
+D_rep(1) = 3.38656250e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.0001     dL=+1.144e-07  CI=[-6.20e-08,+2.91e-07]  KL=skip        rep=3.387e-10  n/a
+  gamma=0.0003     dL=+3.386e-07  CI=[-1.57e-07,+8.15e-07]  KL=skip        rep=3.048e-09  n/a
+  gamma=0.001      dL=+1.020e-06  CI=[-6.44e-07,+2.60e-06]  KL=skip        rep=3.387e-08  n/a
+  gamma=0.003      dL=+3.223e-06  CI=[-1.44e-06,+8.04e-06]  KL=skip        rep=3.048e-07  n/a
+  gamma=0.01       dL=+1.178e-05  CI=[-4.16e-06,+2.78e-05]  KL=skip        rep=3.387e-06  n/a
+  gamma=0.03       dL=+4.574e-05  CI=[+7.61e-07,+9.05e-05]  KL=skip        rep=3.048e-05  n/a
+  gamma=0.1        dL=+2.966e-04  CI=[+1.61e-04,+4.33e-04]  KL=skip        rep=3.387e-04  n/a
+  ==> best stable gamma=0, dL=+0.000e+00; small-gamma score min(dL/gamma)=+1.020e-03
+
+========================================================================================
+DONE mistralai/Mistral-7B-v0.1
+JSON -> results/mistral_allpos_corrected/small_gamma_Mistral-7B-v0.1.json
+CSV  -> results/mistral_allpos_corrected/small_gamma_Mistral-7B-v0.1.csv
+best position: (F4,F5)  gamma=0.1  dL=-6.356716e-05
+wallclock: 3224.1s
+========================================================================================

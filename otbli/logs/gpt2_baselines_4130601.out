@@ -1,0 +1,294 @@
+========================================================================================
+GPT-2 FIXED-POSITION BASELINE COMPARISON
+========================================================================================
+model            : openai-community/gpt2-large
+fixed position   : 11 (pair F12,F13)
+methods          : ['barycenter', 'hard_ot_midpoint', 'naive_average', 'copy_prev', 'copy_next', 'random_native']
+random seeds     : [0, 1, 2, 3, 4]
+gamma grid       : (0.0, 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.05, 0.075, 0.1, 0.125, 0.15, 0.2, 0.3, 0.5)
+selection pool   : gamma tuning only
+confirmation     : locked candidates only
+training         : NONE
+========================================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+pools: selection=(25, 8, 1024), confirmation=(40, 8, 1024)
+`loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+base selection loss   = 2.97176849, PPL=19.526421
+base confirmation loss= 2.53869485, PPL=12.663133
+
+========================================================================================
+METHOD: barycenter
+========================================================================================
+  gamma=0.0001  dL=-3.509521e-06 CI=[-5.78e-06,-1.77e-06] KL=4.508e-10 rep=2.145e-10 stable
+  gamma=0.0003  dL=-1.054764e-05 CI=[-1.77e-05,-5.33e-06] KL=3.314e-09 rep=1.931e-09 stable
+  gamma=0.001   dL=-3.523350e-05 CI=[-5.90e-05,-1.76e-05] KL=3.719e-08 rep=2.145e-08 stable
+  gamma=0.003   dL=-1.054287e-04 CI=[-1.78e-04,-5.38e-05] KL=3.342e-07 rep=1.931e-07 stable
+  gamma=0.01    dL=-3.477955e-04 CI=[-5.94e-04,-1.76e-04] KL=3.704e-06 rep=2.145e-06 stable
+  gamma=0.03    dL=-1.014318e-03 CI=[-1.70e-03,-5.03e-04] KL=3.316e-05 rep=1.931e-05 stable
+  gamma=0.05    dL=-1.641431e-03 CI=[-2.81e-03,-8.16e-04] KL=9.162e-05 rep=5.363e-05 stable
+  gamma=0.075   dL=-2.369895e-03 CI=[-4.06e-03,-1.17e-03] KL=2.048e-04 rep=1.207e-04 stable
+  gamma=0.1     dL=-3.036637e-03 CI=[-5.33e-03,-1.40e-03] KL=3.618e-04 rep=2.145e-04 stable
+  gamma=0.125   dL=-3.641291e-03 CI=[-6.34e-03,-1.66e-03] KL=5.618e-04 rep=3.352e-04 stable
+  gamma=0.15    dL=-4.184318e-03 CI=[-7.52e-03,-1.90e-03] KL=8.040e-04 rep=4.826e-04 stable
+  gamma=0.2     dL=-5.086141e-03 CI=[-9.30e-03,-2.14e-03] KL=1.413e-03 rep=8.580e-04 stable
+  gamma=0.3     dL=-6.166725e-03 CI=[-1.18e-02,-2.14e-03] KL=3.114e-03 rep=1.931e-03 stable
+  gamma=0.5     dL=-5.541716e-03 CI=[-1.41e-02,-4.61e-06] KL=8.442e-03 rep=5.363e-03 stable
+  ==> selected gamma=0.3, selection dL=-6.166725e-03
+  ---- locked confirmation ----
+  dL_conf       = -1.57345831e-03
+  CI95_conf     = [-3.69243920e-03, -2.21170485e-06]
+  one-sided p   = 0.0542177
+  KL_conf       = 2.67281427e-03
+  rep_conf      = 1.93054131e-03
+  verdict       = CONFIRMED
+
+========================================================================================
+METHOD: hard_ot_midpoint
+========================================================================================
+  gamma=0.0001  dL=-1.840591e-06 CI=[-3.02e-06,-8.77e-07] KL=2.207e-10 rep=1.112e-10 stable
+  gamma=0.0003  dL=-5.626678e-06 CI=[-9.33e-06,-2.76e-06] KL=1.595e-09 rep=1.001e-09 stable
+  gamma=0.001   dL=-1.890659e-05 CI=[-3.15e-05,-9.21e-06] KL=1.397e-08 rep=1.112e-08 stable
+  gamma=0.003   dL=-5.663395e-05 CI=[-9.44e-05,-2.81e-05] KL=1.242e-07 rep=1.001e-07 stable
+  gamma=0.01    dL=-1.876974e-04 CI=[-3.16e-04,-9.06e-05] KL=1.375e-06 rep=1.112e-06 stable
+  gamma=0.03    dL=-5.538130e-04 CI=[-9.22e-04,-2.67e-04] KL=1.233e-05 rep=1.001e-05 stable
+  gamma=0.05    dL=-9.074640e-04 CI=[-1.51e-03,-4.41e-04] KL=3.415e-05 rep=2.781e-05 stable
+  gamma=0.075   dL=-1.331763e-03 CI=[-2.26e-03,-6.56e-04] KL=7.655e-05 rep=6.257e-05 stable
+  gamma=0.1     dL=-1.736307e-03 CI=[-2.95e-03,-7.74e-04] KL=1.356e-04 rep=1.112e-04 stable
+  gamma=0.125   dL=-2.121358e-03 CI=[-3.61e-03,-9.50e-04] KL=2.110e-04 rep=1.738e-04 stable
+  gamma=0.15    dL=-2.486448e-03 CI=[-4.33e-03,-1.14e-03] KL=3.026e-04 rep=2.503e-04 stable
+  gamma=0.2     dL=-3.157921e-03 CI=[-5.51e-03,-1.36e-03] KL=5.339e-04 rep=4.449e-04 stable
+  gamma=0.3     dL=-4.266062e-03 CI=[-7.56e-03,-1.66e-03] KL=1.183e-03 rep=1.001e-03 stable
+  gamma=0.5     dL=-5.556993e-03 CI=[-1.10e-02,-1.57e-03] KL=3.187e-03 rep=2.781e-03 stable
+  ==> selected gamma=0.5, selection dL=-5.556993e-03
+  ---- locked confirmation ----
+  dL_conf       = -1.63456798e-03
+  CI95_conf     = [-3.54050182e-03, -1.35910138e-04]
+  one-sided p   = 0.0359116
+  KL_conf       = 2.70198177e-03
+  rep_conf      = 2.78092257e-03
+  verdict       = CONFIRMED
+
+========================================================================================
+METHOD: naive_average
+========================================================================================
+  gamma=0.0001  dL=-2.880096e-06 CI=[-4.88e-06,-1.35e-06] KL=2.379e-10 rep=1.871e-10 stable
+  gamma=0.0003  dL=-8.420944e-06 CI=[-1.44e-05,-3.96e-06] KL=2.649e-09 rep=1.684e-09 stable
+  gamma=0.001   dL=-2.846718e-05 CI=[-4.92e-05,-1.30e-05] KL=3.038e-08 rep=1.871e-08 stable
+  gamma=0.003   dL=-8.521557e-05 CI=[-1.48e-04,-4.00e-05] KL=2.723e-07 rep=1.684e-07 stable
+  gamma=0.01    dL=-2.813005e-04 CI=[-4.94e-04,-1.31e-04] KL=3.020e-06 rep=1.871e-06 stable
+  gamma=0.03    dL=-8.193016e-04 CI=[-1.40e-03,-3.72e-04] KL=2.704e-05 rep=1.684e-05 stable
+  gamma=0.05    dL=-1.324992e-03 CI=[-2.33e-03,-6.05e-04] KL=7.476e-05 rep=4.678e-05 stable
+  gamma=0.075   dL=-1.911135e-03 CI=[-3.38e-03,-8.63e-04] KL=1.672e-04 rep=1.053e-04 stable
+  gamma=0.1     dL=-2.446256e-03 CI=[-4.40e-03,-1.02e-03] KL=2.955e-04 rep=1.871e-04 stable
+  gamma=0.125   dL=-2.930636e-03 CI=[-5.27e-03,-1.22e-03] KL=4.589e-04 rep=2.924e-04 stable
+  gamma=0.15    dL=-3.364396e-03 CI=[-6.25e-03,-1.37e-03] KL=6.570e-04 rep=4.210e-04 stable
+  gamma=0.2     dL=-4.081793e-03 CI=[-7.70e-03,-1.51e-03] KL=1.154e-03 rep=7.485e-04 stable
+  gamma=0.3     dL=-4.931002e-03 CI=[-9.82e-03,-1.44e-03] KL=2.540e-03 rep=1.684e-03 stable
+  gamma=0.5     dL=-4.433661e-03 CI=[-1.18e-02,+3.97e-04] KL=6.803e-03 rep=4.678e-03 stable
+  ==> selected gamma=0.3, selection dL=-4.931002e-03
+  ---- locked confirmation ----
+  dL_conf       = -1.27790272e-03
+  CI95_conf     = [-3.09239894e-03, +9.19856876e-05]
+  one-sided p   = 0.0660279
+  KL_conf       = 2.15257170e-03
+  rep_conf      = 1.68405100e-03
+  verdict       = NOT CONFIRMED
+
+========================================================================================
+METHOD: copy_prev
+========================================================================================
+  gamma=0.0001  dL=-4.768372e-07 CI=[-2.01e-06,+7.25e-07] KL=8.056e-11 rep=3.426e-10 stable
+  gamma=0.0003  dL=-1.358986e-06 CI=[-6.01e-06,+2.16e-06] KL=2.920e-09 rep=3.083e-09 stable
+  gamma=0.001   dL=-4.224777e-06 CI=[-1.94e-05,+7.56e-06] KL=2.950e-08 rep=3.426e-08 stable
+  gamma=0.003   dL=-1.271248e-05 CI=[-5.78e-05,+2.28e-05] KL=2.653e-07 rep=3.083e-07 stable
+  gamma=0.01    dL=-4.081249e-05 CI=[-1.96e-04,+7.64e-05] KL=2.942e-06 rep=3.426e-06 stable
+  gamma=0.03    dL=-1.087618e-04 CI=[-5.59e-04,+2.48e-04] KL=2.627e-05 rep=3.083e-05 stable
+  gamma=0.05    dL=-1.587009e-04 CI=[-9.12e-04,+4.19e-04] KL=7.245e-05 rep=8.565e-05 stable
+  gamma=0.075   dL=-1.963139e-04 CI=[-1.30e-03,+6.55e-04] KL=1.615e-04 rep=1.927e-04 stable
+  gamma=0.1     dL=-2.068281e-04 CI=[-1.67e-03,+9.50e-04] KL=2.846e-04 rep=3.426e-04 stable
+  gamma=0.125   dL=-1.909351e-04 CI=[-1.98e-03,+1.18e-03] KL=4.409e-04 rep=5.353e-04 stable
+  gamma=0.15    dL=-1.493549e-04 CI=[-2.34e-03,+1.54e-03] KL=6.294e-04 rep=7.709e-04 stable
+  gamma=0.2     dL=+9.860992e-06 CI=[-2.73e-03,+2.14e-03] KL=skip rep=1.370e-03 
+  gamma=0.3     dL=+6.171989e-04 CI=[-3.42e-03,+3.74e-03] KL=skip rep=3.083e-03 
+  gamma=0.5     dL=+2.896714e-03 CI=[-3.56e-03,+7.60e-03] KL=skip rep=8.565e-03 
+  ==> selected gamma=0.1, selection dL=-2.068281e-04
+  ---- locked confirmation ----
+  dL_conf       = +7.74985552e-04
+  CI95_conf     = [+3.44155058e-04, +1.20230250e-03]
+  one-sided p   = 0.999254
+  KL_conf       = 2.40316255e-04
+  rep_conf      = 3.42607554e-04
+  verdict       = NOT CONFIRMED
+
+========================================================================================
+METHOD: copy_next
+========================================================================================
+  gamma=0.0001  dL=-3.681183e-06 CI=[-5.73e-06,-1.90e-06] KL=1.992e-10 rep=4.014e-10 stable
+  gamma=0.0003  dL=-1.095295e-05 CI=[-1.70e-05,-5.83e-06] KL=2.705e-09 rep=3.612e-09 stable
+  gamma=0.001   dL=-3.691196e-05 CI=[-5.78e-05,-1.93e-05] KL=3.310e-08 rep=4.014e-08 stable
+  gamma=0.003   dL=-1.104832e-04 CI=[-1.72e-04,-6.00e-05] KL=2.979e-07 rep=3.612e-07 stable
+  gamma=0.01    dL=-3.661489e-04 CI=[-5.79e-04,-1.93e-04] KL=3.295e-06 rep=4.014e-06 stable
+  gamma=0.03    dL=-1.078668e-03 CI=[-1.69e-03,-5.62e-04] KL=2.934e-05 rep=3.612e-05 stable
+  gamma=0.05    dL=-1.766324e-03 CI=[-2.78e-03,-9.34e-04] KL=8.065e-05 rep=1.003e-04 stable
+  gamma=0.075   dL=-2.591243e-03 CI=[-4.17e-03,-1.38e-03] KL=1.791e-04 rep=2.258e-04 stable
+  gamma=0.1     dL=-3.378596e-03 CI=[-5.34e-03,-1.67e-03] KL=3.143e-04 rep=4.014e-04 stable
+  gamma=0.125   dL=-4.129462e-03 CI=[-6.55e-03,-2.05e-03] KL=4.850e-04 rep=6.272e-04 stable
+  gamma=0.15    dL=-4.844422e-03 CI=[-7.76e-03,-2.44e-03] KL=6.897e-04 rep=9.031e-04 stable
+  gamma=0.2     dL=-6.170354e-03 CI=[-9.90e-03,-3.01e-03] KL=1.197e-03 rep=1.606e-03 stable
+  gamma=0.3     dL=-8.423538e-03 CI=[-1.39e-02,-3.79e-03] KL=2.572e-03 rep=3.612e-03 stable
+  gamma=0.5     dL=-1.146051e-02 CI=[-2.00e-02,-4.64e-03] KL=6.573e-03 rep=1.003e-02 stable
+  ==> selected gamma=0.5, selection dL=-1.146051e-02
+  ---- locked confirmation ----
+  dL_conf       = -3.05211246e-03
+  CI95_conf     = [-6.10103227e-03, -4.71293554e-04]
+  one-sided p   = 0.022517
+  KL_conf       = 5.56502967e-03
+  rep_conf      = 1.00345491e-02
+  verdict       = CONFIRMED
+
+========================================================================================
+METHOD: random_native_s0
+========================================================================================
+  gamma=0.0001  dL=-1.001358e-07 CI=[-3.48e-07,+1.14e-07] KL=-8.873e-11 rep=1.587e-11 stable
+  gamma=0.0003  dL=-4.625320e-07 CI=[-1.05e-06,+2.86e-08] KL=3.939e-10 rep=1.428e-10 stable
+  gamma=0.001   dL=-1.497269e-06 CI=[-3.26e-06,-1.05e-07] KL=8.628e-10 rep=1.587e-09 stable
+  gamma=0.003   dL=-4.611015e-06 CI=[-1.03e-05,-9.50e-08] KL=7.403e-09 rep=1.428e-08 stable
+  gamma=0.01    dL=-1.537323e-05 CI=[-3.40e-05,-8.68e-07] KL=8.252e-08 rep=1.587e-07 stable
+  gamma=0.03    dL=-4.579067e-05 CI=[-1.01e-04,+2.68e-07] KL=7.414e-07 rep=1.428e-06 stable
+  gamma=0.05    dL=-7.567406e-05 CI=[-1.64e-04,-2.03e-06] KL=2.060e-06 rep=3.968e-06 stable
+  gamma=0.075   dL=-1.119804e-04 CI=[-2.51e-04,-1.34e-06] KL=4.635e-06 rep=8.928e-06 stable
+  gamma=0.1     dL=-1.470327e-04 CI=[-3.25e-04,+1.60e-06] KL=8.243e-06 rep=1.587e-05 stable
+  gamma=0.125   dL=-1.813650e-04 CI=[-4.05e-04,+9.34e-06] KL=1.288e-05 rep=2.480e-05 stable
+  gamma=0.15    dL=-2.145958e-04 CI=[-4.85e-04,+8.82e-06] KL=1.855e-05 rep=3.571e-05 stable
+  gamma=0.2     dL=-2.779818e-04 CI=[-6.29e-04,+1.43e-05] KL=3.300e-05 rep=6.348e-05 stable
+  gamma=0.3     dL=-3.918982e-04 CI=[-9.26e-04,+4.89e-05] KL=7.432e-05 rep=1.428e-04 stable
+  gamma=0.5     dL=-5.703163e-04 CI=[-1.48e-03,+1.50e-04] KL=2.068e-04 rep=3.968e-04 stable
+  ==> selected gamma=0.5, selection dL=-5.703163e-04
+  ---- locked confirmation ----
+  dL_conf       = +9.11831856e-05
+  CI95_conf     = [-1.56862512e-04, +2.66579315e-04]
+  one-sided p   = 0.788098
+  KL_conf       = 1.66209278e-04
+  rep_conf      = 3.96778414e-04
+  verdict       = NOT CONFIRMED
+
+========================================================================================
+METHOD: random_native_s1
+========================================================================================
+  gamma=0.0001  dL=+1.621246e-07 CI=[+1.91e-08,+3.05e-07] KL=skip rep=1.589e-11 
+  gamma=0.0003  dL=+3.719330e-07 CI=[+1.00e-07,+6.29e-07] KL=skip rep=1.430e-10 
+  gamma=0.001   dL=+1.268387e-06 CI=[+5.34e-07,+2.02e-06] KL=skip rep=1.589e-09 
+  gamma=0.003   dL=+3.604889e-06 CI=[+1.45e-06,+5.88e-06] KL=skip rep=1.430e-08 
+  gamma=0.01    dL=+1.219273e-05 CI=[+4.82e-06,+1.98e-05] KL=skip rep=1.589e-07 
+  gamma=0.03    dL=+3.722668e-05 CI=[+1.50e-05,+5.92e-05] KL=skip rep=1.430e-06 
+  gamma=0.05    dL=+6.271362e-05 CI=[+2.53e-05,+9.95e-05] KL=skip rep=3.972e-06 
+  gamma=0.075   dL=+9.550571e-05 CI=[+3.90e-05,+1.51e-04] KL=skip rep=8.937e-06 
+  gamma=0.1     dL=+1.293993e-04 CI=[+5.50e-05,+2.06e-04] KL=skip rep=1.589e-05 
+  gamma=0.125   dL=+1.641369e-04 CI=[+7.07e-05,+2.58e-04] KL=skip rep=2.482e-05 
+  gamma=0.15    dL=+1.997948e-04 CI=[+8.57e-05,+3.10e-04] KL=skip rep=3.575e-05 
+  gamma=0.2     dL=+2.742863e-04 CI=[+1.27e-04,+4.27e-04] KL=skip rep=6.355e-05 
+  gamma=0.3     dL=+4.345274e-04 CI=[+2.15e-04,+6.67e-04] KL=skip rep=1.430e-04 
+  gamma=0.5     dL=+8.015108e-04 CI=[+4.34e-04,+1.18e-03] KL=skip rep=3.972e-04 
+  ==> selected gamma=0, selection dL=+0.000000e+00
+  ---- locked confirmation ----
+  dL_conf       = +0.00000000e+00
+  CI95_conf     = [+0.00000000e+00, +0.00000000e+00]
+  one-sided p   = nan
+  KL_conf       = 0.00000000e+00
+  rep_conf      = 0.00000000e+00
+  verdict       = NOT CONFIRMED
+
+========================================================================================
+METHOD: random_native_s2
+========================================================================================
+  gamma=0.0001  dL=+5.722046e-08 CI=[-1.24e-07,+2.67e-07] KL=skip rep=1.496e-11 
+  gamma=0.0003  dL=-7.152557e-08 CI=[-4.91e-07,+4.77e-07] KL=2.442e-10 rep=1.347e-10 stable
+  gamma=0.001   dL=-2.717972e-07 CI=[-1.56e-06,+1.52e-06] KL=7.429e-10 rep=1.496e-09 stable
+  gamma=0.003   dL=-8.821487e-07 CI=[-4.96e-06,+4.31e-06] KL=7.386e-09 rep=1.347e-08 stable
+  gamma=0.01    dL=-3.170967e-06 CI=[-1.66e-05,+1.47e-05] KL=8.135e-08 rep=1.496e-07 stable
+  gamma=0.03    dL=-9.055138e-06 CI=[-5.00e-05,+4.49e-05] KL=7.330e-07 rep=1.347e-06 stable
+  gamma=0.05    dL=-1.418114e-05 CI=[-8.11e-05,+7.40e-05] KL=2.036e-06 rep=3.741e-06 stable
+  gamma=0.075   dL=-1.966953e-05 CI=[-1.18e-04,+1.13e-04] KL=4.582e-06 rep=8.417e-06 stable
+  gamma=0.1     dL=-2.403259e-05 CI=[-1.59e-04,+1.54e-04] KL=8.146e-06 rep=1.496e-05 stable
+  gamma=0.125   dL=-2.752304e-05 CI=[-2.00e-04,+1.87e-04] KL=1.273e-05 rep=2.338e-05 stable
+  gamma=0.15    dL=-2.990723e-05 CI=[-2.31e-04,+2.46e-04] KL=1.833e-05 rep=3.367e-05 stable
+  gamma=0.2     dL=-3.163338e-05 CI=[-3.09e-04,+3.21e-04] KL=3.259e-05 rep=5.986e-05 stable
+  gamma=0.3     dL=-2.248764e-05 CI=[-4.34e-04,+5.13e-04] KL=7.337e-05 rep=1.347e-04 stable
+  gamma=0.5     dL=+4.578114e-05 CI=[-6.46e-04,+1.02e-03] KL=skip rep=3.741e-04 
+  ==> selected gamma=0.2, selection dL=-3.163338e-05
+  ---- locked confirmation ----
+  dL_conf       = -1.43405795e-04
+  CI95_conf     = [-2.46584713e-04, -3.69779766e-05]
+  one-sided p   = 0.00601531
+  KL_conf       = 2.68306490e-05
+  rep_conf      = 5.98573626e-05
+  verdict       = CONFIRMED
+
+========================================================================================
+METHOD: random_native_s3
+========================================================================================
+  gamma=0.0001  dL=+2.193451e-07 CI=[+4.77e-08,+4.01e-07] KL=skip rep=1.563e-11 
+  gamma=0.0003  dL=+4.911423e-07 CI=[+1.62e-07,+8.82e-07] KL=skip rep=1.406e-10 
+  gamma=0.001   dL=+1.564026e-06 CI=[+4.77e-07,+2.81e-06] KL=skip rep=1.563e-09 
+  gamma=0.003   dL=+4.734993e-06 CI=[+1.51e-06,+8.54e-06] KL=skip rep=1.406e-08 
+  gamma=0.01    dL=+1.607895e-05 CI=[+5.24e-06,+2.93e-05] KL=skip rep=1.563e-07 
+  gamma=0.03    dL=+4.846096e-05 CI=[+1.46e-05,+8.76e-05] KL=skip rep=1.406e-06 
+  gamma=0.05    dL=+8.139133e-05 CI=[+2.64e-05,+1.47e-04] KL=skip rep=3.907e-06 
+  gamma=0.075   dL=+1.237679e-04 CI=[+4.07e-05,+2.26e-04] KL=skip rep=8.790e-06 
+  gamma=0.1     dL=+1.667500e-04 CI=[+5.57e-05,+2.91e-04] KL=skip rep=1.563e-05 
+  gamma=0.125   dL=+2.108669e-04 CI=[+7.47e-05,+3.73e-04] KL=skip rep=2.442e-05 
+  gamma=0.15    dL=+2.560616e-04 CI=[+8.86e-05,+4.63e-04] KL=skip rep=3.516e-05 
+  gamma=0.2     dL=+3.489828e-04 CI=[+1.27e-04,+6.19e-04] KL=skip rep=6.251e-05 
+  gamma=0.3     dL=+5.469418e-04 CI=[+2.08e-04,+9.60e-04] KL=skip rep=1.406e-04 
+  gamma=0.5     dL=+9.890795e-04 CI=[+4.19e-04,+1.70e-03] KL=skip rep=3.907e-04 
+  ==> selected gamma=0, selection dL=+0.000000e+00
+  ---- locked confirmation ----
+  dL_conf       = +0.00000000e+00
+  CI95_conf     = [+0.00000000e+00, +0.00000000e+00]
+  one-sided p   = nan
+  KL_conf       = 0.00000000e+00
+  rep_conf      = 0.00000000e+00
+  verdict       = NOT CONFIRMED
+
+========================================================================================
+METHOD: random_native_s4
+========================================================================================
+  gamma=0.0001  dL=+1.621246e-07 CI=[-6.68e-08,+4.10e-07] KL=skip rep=1.550e-11 
+  gamma=0.0003  dL=+3.623962e-07 CI=[-8.11e-08,+9.73e-07] KL=skip rep=1.395e-10 
+  gamma=0.001   dL=+1.134872e-06 CI=[-1.19e-07,+2.85e-06] KL=skip rep=1.550e-09 
+  gamma=0.003   dL=+3.833771e-06 CI=[+1.52e-07,+9.01e-06] KL=skip rep=1.395e-08 
+  gamma=0.01    dL=+1.276493e-05 CI=[+1.01e-06,+2.99e-05] KL=skip rep=1.550e-07 
+  gamma=0.03    dL=+3.876209e-05 CI=[+3.10e-06,+8.84e-05] KL=skip rep=1.395e-06 
+  gamma=0.05    dL=+6.534576e-05 CI=[+4.47e-06,+1.52e-04] KL=skip rep=3.876e-06 
+  gamma=0.075   dL=+9.925842e-05 CI=[+9.43e-06,+2.27e-04] KL=skip rep=8.721e-06 
+  gamma=0.1     dL=+1.342821e-04 CI=[+1.54e-05,+3.08e-04] KL=skip rep=1.550e-05 
+  gamma=0.125   dL=+1.702023e-04 CI=[+1.89e-05,+3.80e-04] KL=skip rep=2.423e-05 
+  gamma=0.15    dL=+2.069855e-04 CI=[+2.75e-05,+4.71e-04] KL=skip rep=3.489e-05 
+  gamma=0.2     dL=+2.833462e-04 CI=[+3.87e-05,+6.26e-04] KL=skip rep=6.202e-05 
+  gamma=0.3     dL=+4.474354e-04 CI=[+8.38e-05,+9.66e-04] KL=skip rep=1.395e-04 
+  gamma=0.5     dL=+8.203077e-04 CI=[+2.37e-04,+1.71e-03] KL=skip rep=3.876e-04 
+  ==> selected gamma=0, selection dL=+0.000000e+00
+  ---- locked confirmation ----
+  dL_conf       = +0.00000000e+00
+  CI95_conf     = [+0.00000000e+00, +0.00000000e+00]
+  one-sided p   = nan
+  KL_conf       = 0.00000000e+00
+  rep_conf      = 0.00000000e+00
+  verdict       = NOT CONFIRMED
+
+========================================================================================
+FINAL RANKING BY LOCKED CONFIRMATION dL
+========================================================================================
+copy_next                gamma=0.5     dL_sel=-1.146e-02 dL_conf=-3.052e-03 CI=[-6.10e-03,-4.71e-04] CONFIRMED
+hard_ot_midpoint         gamma=0.5     dL_sel=-5.557e-03 dL_conf=-1.635e-03 CI=[-3.54e-03,-1.36e-04] CONFIRMED
+barycenter               gamma=0.3     dL_sel=-6.167e-03 dL_conf=-1.573e-03 CI=[-3.69e-03,-2.21e-06] CONFIRMED
+naive_average            gamma=0.3     dL_sel=-4.931e-03 dL_conf=-1.278e-03 CI=[-3.09e-03,+9.20e-05] 
+random_native_s2         gamma=0.2     dL_sel=-3.163e-05 dL_conf=-1.434e-04 CI=[-2.47e-04,-3.70e-05] CONFIRMED
+random_native_s1         gamma=0       dL_sel=+0.000e+00 dL_conf=+0.000e+00 CI=[+0.00e+00,+0.00e+00] 
+random_native_s3         gamma=0       dL_sel=+0.000e+00 dL_conf=+0.000e+00 CI=[+0.00e+00,+0.00e+00] 
+random_native_s4         gamma=0       dL_sel=+0.000e+00 dL_conf=+0.000e+00 CI=[+0.00e+00,+0.00e+00] 
+random_native_s0         gamma=0.5     dL_sel=-5.703e-04 dL_conf=+9.118e-05 CI=[-1.57e-04,+2.67e-04] 
+copy_prev                gamma=0.1     dL_sel=-2.068e-04 dL_conf=+7.750e-04 CI=[+3.44e-04,+1.20e-03] 
+========================================================================================
+JSON -> results/gpt2_baseline_comparison/gpt2_fixed_position_baseline_comparison.json
+CSV  -> results/gpt2_baseline_comparison/gpt2_fixed_position_baseline_comparison.csv

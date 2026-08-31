@@ -1,0 +1,8 @@
+# Tested with torch 2.13.0+cu130 / transformers 5.16.1 / scipy 1.17.1 / numpy 2.4.4
+# Leave unpinned so pip resolves builds matching Kuma's CUDA driver.
+torch
+transformers
+scipy
+numpy
+datasets      # only needed for hf: pool sources in make_pools.py
+# lm-eval>=0.4  # only needed for E6 (run_downstream.py) -- install separately, see RUNBOOK.md

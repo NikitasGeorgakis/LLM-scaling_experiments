@@ -1,0 +1,97 @@
+{
+ "latest": {
+  "source": "hf:monology/pile-uncopyrighted:train",
+  "skip_docs": 900,
+  "min_chars": 200,
+  "pools": [
+   {
+    "name": "C_final",
+    "path": "pools/C_final.jsonl",
+    "docs": 3000,
+    "source_index_start": 900,
+    "source_index_end": 3955,
+    "sha256": "22937885eae14a9d5e8a1699dda3832a4a9867ca153cfdcf72bb3fcfe66a4ed2"
+   },
+   {
+    "name": "D_sel",
+    "path": "pools/D_sel.jsonl",
+    "docs": 1500,
+    "source_index_start": 3955,
+    "source_index_end": 5478,
+    "sha256": "55bb609161909391a875c41aaabd6f4ea5acf2344ca4b8a366f4bc98491015b5"
+   },
+   {
+    "name": "E_sel",
+    "path": "pools/E_sel.jsonl",
+    "docs": 1500,
+    "source_index_start": 5478,
+    "source_index_end": 7007,
+    "sha256": "0d44ee08c16a9868850990f408bddaf5db70f8f7bf380ddf780956c2a1b9173e"
+   },
+   {
+    "name": "G_pile",
+    "path": "pools/G_pile.jsonl",
+    "docs": 3000,
+    "source_index_start": 7007,
+    "source_index_end": 10068,
+    "sha256": "85f8fad5ef43247ca82f98fafde3eaf3830b68a646abddb310b451e49d60d339"
+   }
+  ]
+ },
+ "history": [
+  {
+   "source": "hf:Skylion007/openwebtext:train",
+   "skip_docs": 0,
+   "min_chars": 200,
+   "pools": [
+    {
+     "name": "F_openwebtext",
+     "path": "pools/F_openwebtext.jsonl",
+     "docs": 3000,
+     "source_index_start": 0,
+     "source_index_end": 3000,
+     "sha256": "510f59e8349315f2dcf5939b5e490b5756b2b6c6a2f2a2fccefd7feaa54f5271"
+    }
+   ]
+  },
+  {
+   "source": "hf:monology/pile-uncopyrighted:train",
+   "skip_docs": 900,
+   "min_chars": 200,
+   "pools": [
+    {
+     "name": "C_final",
+     "path": "pools/C_final.jsonl",
+     "docs": 3000,
+     "source_index_start": 900,
+     "source_index_end": 3955,
+     "sha256": "22937885eae14a9d5e8a1699dda3832a4a9867ca153cfdcf72bb3fcfe66a4ed2"
+    },
+    {
+     "name": "D_sel",
+     "path": "pools/D_sel.jsonl",
+     "docs": 1500,
+     "source_index_start": 3955,
+     "source_index_end": 5478,
+     "sha256": "55bb609161909391a875c41aaabd6f4ea5acf2344ca4b8a366f4bc98491015b5"
+    },
+    {
+     "name": "E_sel",
+     "path": "pools/E_sel.jsonl",
+     "docs": 1500,
+     "source_index_start": 5478,
+     "source_index_end": 7007,
+     "sha256": "0d44ee08c16a9868850990f408bddaf5db70f8f7bf380ddf780956c2a1b9173e"
+    },
+    {
+     "name": "G_pile",
+     "path": "pools/G_pile.jsonl",
+     "docs": 3000,
+     "source_index_start": 7007,
+     "source_index_end": 10068,
+     "sha256": "85f8fad5ef43247ca82f98fafde3eaf3830b68a646abddb310b451e49d60d339"
+    }
+   ]
+  }
+ ]
+}

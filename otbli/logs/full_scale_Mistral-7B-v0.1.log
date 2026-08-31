@@ -1,0 +1,148 @@
+==============================================================================
+PRE-REGISTERED CONSTANTS (fixed and printed before any evaluation)
+==============================================================================
+[OTConfig]
+{
+  "tau": 0.5,
+  "eta": 0.05,
+  "n_alt_rounds": 25,
+  "n_sinkhorn_iters": 80,
+  "tol": 0.0,
+  "gauge_fix": true,
+  "ot_dtype": "float32"
+}
+[GateConfig]
+{
+  "grid": [
+    0.0,
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1,
+    0.2,
+    0.5,
+    1.0
+  ],
+  "eps_KL": 0.05,
+  "eps_rep": 0.05,
+  "eps_eff": 0.1,
+  "lam_L": 1.0,
+  "lam_KL": 0.1,
+  "lam_rep": 0.05,
+  "lam_eff": 0.05,
+  "lam_gamma": 0.01,
+  "omega": [
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "delta": 0.001,
+  "eps_L": 1e-08,
+  "eps_h": 1e-08,
+  "refine_Q": 8
+}
+[DataConfig]
+{
+  "dataset": "monology/pile-uncopyrighted",
+  "seed": 1234,
+  "block_len": 1024,
+  "batch_size": 8,
+  "n_sel_batches": 25,
+  "n_conf_batches": 40
+}
+[ProtocolConfig]
+{
+  "top_k_positions": 2,
+  "n_boot_sel": 2000,
+  "n_boot_conf": 10000,
+  "kl_batches": 25,
+  "drift_batches": 4,
+  "latency_batches": 5,
+  "latency_repeats": 3,
+  "match_max_units": 4096
+}
+==============================================================================
+
+##############################################################################
+# mistralai/Mistral-7B-v0.1
+##############################################################################
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.17s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.72s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.94s/it]
+blocks L = 32, parameters = 7242M, MLP family = gated (gauge-fixed SwiGLU atoms)
+pools: selection (25, 8, 1024)  confirmation (40, 8, 1024) (cached at results/pools_Mistral-7B-v0.1_seed1234.pt; confirmation stays untouched)
+base selection loss L(0) = 1.6014 nats/token (PPL = 4.96)
+[Stage A] pair (F 1,F 2)  paired dL(gamma=1) = +0.067805 nats  CI95 = [+0.06144, +0.07490]
+[Stage A] pair (F 2,F 3)  paired dL(gamma=1) = +0.012356 nats  CI95 = [+0.01052, +0.01475]
+[Stage A] pair (F 3,F 4)  paired dL(gamma=1) = +0.014789 nats  CI95 = [+0.01308, +0.01670]
+[Stage A] pair (F 4,F 5)  paired dL(gamma=1) = +0.007409 nats  CI95 = [+0.00612, +0.00877]
+[Stage A] pair (F 5,F 6)  paired dL(gamma=1) = +0.006659 nats  CI95 = [+0.00546, +0.00803]
+[Stage A] pair (F 6,F 7)  paired dL(gamma=1) = +0.005799 nats  CI95 = [+0.00478, +0.00705]
+[Stage A] pair (F 7,F 8)  paired dL(gamma=1) = +0.005312 nats  CI95 = [+0.00447, +0.00651]
+[Stage A] pair (F 8,F 9)  paired dL(gamma=1) = +0.004879 nats  CI95 = [+0.00399, +0.00588]
+[Stage A] pair (F 9,F10)  paired dL(gamma=1) = +0.003926 nats  CI95 = [+0.00333, +0.00452]
+[Stage A] pair (F10,F11)  paired dL(gamma=1) = +0.003245 nats  CI95 = [+0.00269, +0.00385]
+[Stage A] pair (F11,F12)  paired dL(gamma=1) = +0.003943 nats  CI95 = [+0.00303, +0.00497]
+[Stage A] pair (F12,F13)  paired dL(gamma=1) = +0.004927 nats  CI95 = [+0.00420, +0.00567]
+[Stage A] pair (F13,F14)  paired dL(gamma=1) = +0.003144 nats  CI95 = [+0.00257, +0.00377]
+[Stage A] pair (F14,F15)  paired dL(gamma=1) = +0.003435 nats  CI95 = [+0.00289, +0.00402]
+[Stage A] pair (F15,F16)  paired dL(gamma=1) = +0.004501 nats  CI95 = [+0.00392, +0.00511]
+[Stage A] pair (F16,F17)  paired dL(gamma=1) = +0.004795 nats  CI95 = [+0.00423, +0.00541]
+[Stage A] pair (F17,F18)  paired dL(gamma=1) = +0.004268 nats  CI95 = [+0.00375, +0.00475]
+[Stage A] pair (F18,F19)  paired dL(gamma=1) = +0.004265 nats  CI95 = [+0.00366, +0.00491]
+[Stage A] pair (F19,F20)  paired dL(gamma=1) = +0.006447 nats  CI95 = [+0.00544, +0.00763]
+[Stage A] pair (F20,F21)  paired dL(gamma=1) = +0.007632 nats  CI95 = [+0.00627, +0.00905]
+[Stage A] pair (F21,F22)  paired dL(gamma=1) = +0.005045 nats  CI95 = [+0.00414, +0.00590]
+[Stage A] pair (F22,F23)  paired dL(gamma=1) = +0.004479 nats  CI95 = [+0.00378, +0.00533]
+[Stage A] pair (F23,F24)  paired dL(gamma=1) = +0.003927 nats  CI95 = [+0.00322, +0.00466]
+[Stage A] pair (F24,F25)  paired dL(gamma=1) = +0.003820 nats  CI95 = [+0.00319, +0.00450]
+[Stage A] pair (F25,F26)  paired dL(gamma=1) = +0.003481 nats  CI95 = [+0.00302, +0.00402]
+[Stage A] pair (F26,F27)  paired dL(gamma=1) = +0.003272 nats  CI95 = [+0.00263, +0.00398]
+[Stage A] pair (F27,F28)  paired dL(gamma=1) = +0.002477 nats  CI95 = [+0.00190, +0.00310]
+[Stage A] pair (F28,F29)  paired dL(gamma=1) = +0.002757 nats  CI95 = [+0.00241, +0.00314]
+[Stage A] pair (F29,F30)  paired dL(gamma=1) = +0.003880 nats  CI95 = [+0.00325, +0.00445]
+[Stage A] pair (F30,F31)  paired dL(gamma=1) = +0.006146 nats  CI95 = [+0.00544, +0.00687]
+[Stage A] pair (F31,F32)  paired dL(gamma=1) = +0.031973 nats  CI95 = [+0.02762, +0.03673]
+[Stage A] top-2 positions: (F27,F28), (F28,F29)
+[Stage B] pair (F27,F28)  D_rep(1) = 0.01296   C_eff = 0.0304 (FLOPs +3.1%, lat +3.1%, mem +3.0%, par +3.0%)
+  gamma=0          dL=+0.000e+00  KL=0.000e+00  rep=0.000e+00  J=+0.00000e+00  feasible
+  gamma=0.0001     dL=-6.676e-08  KL=-7.872e-11  rep=1.296e-10  J=+1.52019e-02  feasible
+  gamma=0.0003     dL=-2.193e-07  KL=5.354e-10  rep=1.166e-09  J=+1.52018e-02  feasible
+  gamma=0.001      dL=-5.102e-07  KL=3.621e-09  rep=1.296e-08  J=+1.52017e-02  feasible
+  gamma=0.003      dL=-1.521e-06  KL=2.973e-08  rep=1.166e-07  J=+1.52013e-02  feasible
+  gamma=0.01       dL=-4.802e-06  KL=3.331e-07  rep=1.296e-06  J=+1.52019e-02  feasible
+  gamma=0.03       dL=-1.239e-05  KL=2.995e-06  rep=1.166e-05  J=+1.52209e-02  feasible
+  gamma=0.1        dL=-1.935e-05  KL=3.309e-05  rep=1.296e-04  J=+1.54857e-02  feasible
+  gamma=0.2        dL=+2.366e-05  KL=1.313e-04  rep=5.184e-04  J=+1.63978e-02  infeasible
+  gamma=0.5        dL=+5.138e-04  KL=8.033e-04  rep=3.240e-03  J=+2.28694e-02  infeasible
+  gamma=1          dL=+2.477e-03  KL=3.115e-03  rep=1.296e-02  J=+4.59375e-02  infeasible
+  refinement pass skipped: coarse best is the boundary gamma = 0
+[Stage B] pair (F28,F29)  D_rep(1) = 0.01577   C_eff = 0.0304 (FLOPs +3.1%, lat +3.1%, mem +3.0%, par +3.0%)
+  gamma=0          dL=+0.000e+00  KL=0.000e+00  rep=0.000e+00  J=+0.00000e+00  feasible
+  gamma=0.0001     dL=-1.192e-07  KL=-8.124e-11  rep=1.577e-10  J=+1.52240e-02  feasible
+  gamma=0.0003     dL=-1.860e-07  KL=6.652e-10  rep=1.420e-09  J=+1.52240e-02  feasible
+  gamma=0.001      dL=-6.580e-07  KL=3.967e-09  rep=1.577e-08  J=+1.52237e-02  feasible
+  gamma=0.003      dL=-2.003e-06  KL=3.536e-08  rep=1.420e-07  J=+1.52232e-02  feasible
+  gamma=0.01       dL=-6.394e-06  KL=3.947e-07  rep=1.577e-06  J=+1.52235e-02  feasible
+  gamma=0.03       dL=-1.700e-05  KL=3.541e-06  rep=1.420e-05  J=+1.52438e-02  feasible
+  gamma=0.1        dL=-3.055e-05  KL=3.902e-05  rep=1.577e-04  J=+1.55408e-02  feasible
+  gamma=0.2        dL=+1.235e-05  KL=1.543e-04  rep=6.309e-04  J=+1.65713e-02  infeasible
+  gamma=0.5        dL=+5.595e-04  KL=9.333e-04  rep=3.943e-03  J=+2.38832e-02  infeasible
+  gamma=1          dL=+2.757e-03  KL=3.556e-03  rep=1.577e-02  J=+4.98299e-02  infeasible
+  refinement pass skipped: coarse best is the boundary gamma = 0
+[diag] matching at (F27,F28): 100.0% of 4096 units re-matched; mean pairing cost 2.099 -> 1.966 (6.3% reduction)
+[diag] gauge ablation (Sec. 3.6 rem. (i)): matched-cost reduction 6.3% gauge-fixed vs 5.4% raw; rematched 100.0% vs 100.0%
+[diag] drift identity at gamma=0.1: measured 1.316384e-04 vs predicted 1.296000e-04 (rel err 1.57e-02)
+[diag] gamma=1 ordering at (F27,F28): barycentric +0.0025 <= naive +0.0027 < duplicate +0.0298
+[diag] exact recovery: logits bit-equal = True, weights untouched = True
+
+>>> VERDICT [Mistral-7B-v0.1]  gamma* = 0.0  ->  M+_gamma* = M exactly (safe fallback fired)
+    loss-only secondary candidate: pair (F28,F29), gamma = 0.1, dL = -3.055e-05, CI95 = [-6.63e-05, +7.92e-06], strength = 0.82
+    results written to results/full_scale_Mistral-7B-v0.1.json  (7426s)
+
+==============================================================================
+SUMMARY (cf. Table 5)
+  mistralai/Mistral-7B-v0.1    L(0)=1.6014  screened (F27,F28)  gamma* = 0.0

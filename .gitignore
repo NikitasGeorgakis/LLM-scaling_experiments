@@ -1,0 +1,42 @@
+# Tokenized/weight tensors -- large, regenerable from text + tokenizer + seed.
+# Never commit these; document their provenance in PROVENANCE.md instead.
+*.pt
+*.pth
+*.safetensors
+**/locked/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+venv/
+.venv/
+env/
+otbli-venv/
+
+# HF cache / large datasets (never commit; document via manifest.json)
+hf_cache/
+*.arrow
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Large intermediate pools NOT already explicitly tracked
+ot_depth_runs/pools/C_final.jsonl
+ot_depth_runs/pools/D_sel.jsonl
+ot_depth_runs/pools/E_sel.jsonl
+ot_depth_runs/pools/G_pile.jsonl
+ot_depth_runs/pools/F_openwebtext.jsonl
+
+# Jupyter
+.ipynb_checkpoints/

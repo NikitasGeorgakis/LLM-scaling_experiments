@@ -1,0 +1,40 @@
+========================================================================================
+CORRECTED SMALL-GAMMA ALL-POSITION SCREEN
+========================================================================================
+model            : TinyLlama/TinyLlama_v1.1
+gamma grid       : (0.0, 0.03, 0.05, 0.075, 0.1, 0.125, 0.15, 0.2, 0.3, 0.5)
+selection batches: 25
+KL batches       : 25
+drift batches    : 4
+eps_KL           : 0.05
+eps_rep          : 0.05
+C_eff            : NOT USED
+materiality delta: NOT USED
+confirmation pool: NOT EVALUATED
+========================================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+layers=22  parameters=1100.0M  MLP family=gated
+base selection loss = 1.96119305 nats/token  PPL=7.10780
+
+----------------------------------------------------------------------------------------
+[1/1] insertion pair (F7, F8) [0-indexed i=6]
+D_rep(1) = 7.91949760e-02
+  gamma=0          dL=+0.000e+00  KL=0  rep=0  [baseline]
+  gamma=0.03       dL=-5.494e-04  CI=[-1.54e-03,-1.57e-05]  KL=1.134e-03   rep=7.128e-05  stable
+  gamma=0.05       dL=-8.310e-04  CI=[-2.39e-03,+1.36e-06]  KL=1.420e-03   rep=1.980e-04  stable
+  gamma=0.075      dL=-8.231e-04  CI=[-2.42e-03,+6.15e-05]  KL=1.596e-03   rep=4.455e-04  stable
+  gamma=0.1        dL=-7.635e-04  CI=[-2.38e-03,+1.71e-04]  KL=1.774e-03   rep=7.919e-04  stable
+  gamma=0.125      dL=-6.361e-04  CI=[-2.25e-03,+3.46e-04]  KL=2.018e-03   rep=1.237e-03  stable
+  gamma=0.15       dL=-4.346e-04  CI=[-2.08e-03,+5.94e-04]  KL=2.360e-03   rep=1.782e-03  stable
+  gamma=0.2        dL=+1.291e-04  CI=[-1.58e-03,+1.22e-03]  KL=skip        rep=3.168e-03  n/a
+  gamma=0.3        dL=+1.162e-03  CI=[-6.68e-04,+2.44e-03]  KL=skip        rep=7.128e-03  n/a
+  gamma=0.5        dL=+4.887e-03  CI=[+2.90e-03,+6.56e-03]  KL=skip        rep=1.980e-02  n/a
+  ==> best stable gamma=0.05, dL=-8.310e-04; small-gamma score min(dL/gamma)=-1.831e-02
+
+========================================================================================
+DONE TinyLlama/TinyLlama_v1.1
+JSON -> results/tinyllama_gamma_refine_f7_f8/small_gamma_TinyLlama_v1.1.json
+CSV  -> results/tinyllama_gamma_refine_f7_f8/small_gamma_TinyLlama_v1.1.csv
+best position: (F7,F8)  gamma=0.05  dL=-8.310175e-04
+wallclock: 284.0s
+========================================================================================
