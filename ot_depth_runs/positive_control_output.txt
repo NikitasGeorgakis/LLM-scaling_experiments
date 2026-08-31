@@ -1,0 +1,30 @@
+==============================================================================
+PART 1: sensitivity sweep (does select_gamma() ever return gamma*>0?)
+==============================================================================
+  injected dL (nats)    % of L0   gamma*          verdict
+         -2.0000e-04     -0.01%      0.0    safe fallback
+         -5.0000e-04     -0.02%      0.0    safe fallback
+         -1.0000e-03     -0.03%      0.0    safe fallback
+         -2.0000e-03     -0.07%      0.0    safe fallback
+         -5.0000e-03     -0.16%      0.0    safe fallback
+         -1.0000e-02     -0.33%      0.0    safe fallback
+         -2.0000e-02     -0.66%      0.0    safe fallback
+         -3.0000e-02     -0.99%      0.0    safe fallback
+         -4.0000e-02     -1.32%      0.0    safe fallback
+  ------------------------------------------------------------  <- crossover
+         -4.5000e-02     -1.48%      0.1    POSITIVE GATE
+         -5.0000e-02     -1.65%      0.1    POSITIVE GATE
+         -6.0000e-02     -1.98%      0.1    POSITIVE GATE
+         -1.0000e-01     -3.30%      0.1    POSITIVE GATE
+
+=> select_gamma() DOES return gamma*>0 for large enough effects.
+   The decision rule is not vacuously biased toward null.
+
+==============================================================================
+PART 2: exact crossover point (binary search)
+==============================================================================
+crossover at dL = -0.04183 nats (-1.379% relative to L0=3.0337)
+(dominated by the FIXED efficiency-cost term: C_eff does not shrink
+ with small gamma, since the extra block runs in full whenever the
+ gate is active at all -- this sets a structural floor on how large
+ a benefit must be before ANY nonzero gamma is ever worthwhile.)
