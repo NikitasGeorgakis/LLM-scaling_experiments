@@ -7,3 +7,4 @@ lm-eval>=0.4.2    # only for scripts/run_task_gate.py (downstream-task target me
 numpy>=1.24
 scipy>=1.10
 tqdm
+accelerate>=0.26.0   # transitive dep of lm-eval's HF backend, not auto-installed
