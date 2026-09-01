@@ -8,6 +8,13 @@
 #   bash slurm/setup_kuma.sh
 #   TRAJ_MODEL=EleutherAI/pythia-6.9b bash slurm/setup_kuma.sh   # also prefetch
 #                                          # the 9 trajectory revisions (~125 GB)
+#
+# If prefetching fails with "429 Too Many Requests" / "rate limit your IP":
+# the cluster's shared egress IP has hit HF's anonymous rate limit. Create a
+# free token at https://huggingface.co/settings/tokens (Read access is
+# enough), then either `huggingface-cli login` or:
+#   export HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxx
+# and re-run this script -- already-fetched files are cached and skipped.
 set -euo pipefail
 REPO_DIR=$(cd "$(dirname "$0")/.." && pwd)
 SCRATCH_DIR=${SCRATCH_DIR:-/scratch/$USER}
@@ -32,17 +39,44 @@ print(f"== torch {torch.__version__} | transformers {transformers.__version__} |
 PY
 
 echo "== prefetching model weights into $HF_HOME"
+echo "   (loaded through the same loader the jobs use, so only the files"
+echo "    actually needed are fetched -- not onnx/tf/flax siblings; retries"
+echo "    with backoff on transient rate limits / 429s)"
+export REPO_DIR
 python - << 'PY'
+import gc
 import os
-from huggingface_hub import snapshot_download
+import sys
+import time
+
+sys.path.insert(0, os.environ["REPO_DIR"])
+from otbli import load_model
+
+
+def fetch(name, revision=None, attempts=5):
+    label = name + (f" @ {revision}" if revision else "")
+    for i in range(attempts):
+        try:
+            print(f"   prefetch {label} (try {i + 1}/{attempts})", flush=True)
+            model, tok = load_model(name, device="cpu", revision=revision)
+            del model, tok
+            gc.collect()
+            return
+        except Exception as e:
+            wait = min(30 * (2 ** i), 300)
+            print(f"     failed: {e}\n     retrying in {wait}s", flush=True)
+            time.sleep(wait)
+    raise RuntimeError(f"could not fetch {label} after {attempts} attempts -- "
+                       "if this is a 429, set HF_TOKEN (see setup_kuma.sh header) "
+                       "and re-run; already-fetched files are cached and skipped")
+
+
 for m in os.environ["MODELS"].split():
-    print("   prefetch", m, flush=True)
-    snapshot_download(m)
+    fetch(m)
 tm = os.environ.get("TRAJ_MODEL", "").strip()
 if tm:
     for s in os.environ["TRAJ_STEPS"].split():
-        print(f"   prefetch {tm} @ step{s}", flush=True)
-        snapshot_download(tm, revision=f"step{s}")
+        fetch(tm, revision=f"step{s}")
 PY
 
 echo "== prebuilding selection/confirmation pools (streams held-out Pile once)"

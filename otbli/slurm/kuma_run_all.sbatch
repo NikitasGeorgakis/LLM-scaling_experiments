@@ -14,8 +14,8 @@
 #SBATCH --time=12:00:00           # default walltime is 5 min — always set this
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=16
-#SBATCH --mem=128G                # host RAM for fp32 checkpoint loading
+#SBATCH --cpus-per-task=16        # Kuma hard cap: max 16 cores per GPU
+#SBATCH --mem=88G                 # Kuma cap at 16 cores: 16*5900MB & 92GB max
 #SBATCH --gres=gpu:1              # one H100 94GB — 6.9B fp32 fits comfortably
 #SBATCH --output=logs/%x_%j.out
 

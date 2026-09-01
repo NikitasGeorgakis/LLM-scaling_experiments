@@ -3,7 +3,7 @@
 Companion code for:
   N. Georgakis & V. Panaretos, "Scaling without re-training" (EPFL, 2026).
 """
-__version__ = "0.1.0"
+__version__ = "0.2.0"  # multi-architecture: GPT-NeoX, GPT-2, SwiGLU (gauge-fixed) + hardened Kuma pipeline
 
 
 def load_model(name: str, device: str = "cuda", revision: str = None,

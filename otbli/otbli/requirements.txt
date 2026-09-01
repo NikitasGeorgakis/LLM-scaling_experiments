@@ -1,9 +1,0 @@
---extra-index-url https://download.pytorch.org/whl/cu124
-torch>=2.1
-transformers>=4.44,<5
-datasets>=2.19
-zstandard>=0.22   # Pile mirror shards are .jsonl.zst; datasets streaming needs this to decompress
-lm-eval>=0.4.2    # only for scripts/run_task_gate.py (downstream-task target metric)
-numpy>=1.24
-scipy>=1.10
-tqdm

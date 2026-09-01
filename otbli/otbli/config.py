@@ -75,6 +75,50 @@ class ProtocolConfig:
     match_max_units: int = 4096   # subsample for the exact-LAP matching diagnostic
 
 
+@dataclass
+class TaskConfig:
+    """Downstream-task target metric (the gated-duplication experiment).
+
+    Pre-registered before any task evaluation:
+      - delta_acc = 0.01, i.e. 1 accuracy point, the materiality margin of
+        eq. (3.47) restated in task units
+      - the candidate positions are the early blocks 1-3, where the published
+        training-free duplication gain is reported
+      - questions are split 50/50 into a selection and a disjoint confirmation
+        half, stratified per task, with the same seed as the Pile pools
+    """
+    tasks: tuple = (
+        "bigbench_causal_judgment_multiple_choice",
+        "bigbench_date_understanding_multiple_choice",
+        "bigbench_disambiguation_qa_multiple_choice",
+        "bigbench_logical_deduction_multiple_choice",
+        "bigbench_movie_recommendation_multiple_choice",
+        "bigbench_navigate_multiple_choice",
+        "bigbench_reasoning_about_colored_objects_multiple_choice",
+        "bigbench_ruin_names_multiple_choice",
+        "bigbench_snarks_multiple_choice",
+        "bigbench_temporal_sequences_multiple_choice",
+    )
+    control_tasks: tuple = (
+        # POSITIVE CONTROL. Small Pythia models sit near chance on most BigBench
+        # tasks, and a gain cannot be detected in a metric that is pure noise --
+        # the same logic as the mechanism diagnostics of Section 6.4: a null is
+        # informative only if the measurement demonstrably has signal. These are
+        # likelihood-scored tasks where a 410M-1B model is clearly above chance
+        # (sciq ~.84, piqa ~.70, arc_easy ~.57, lambada ~.56), so they show
+        # whether the pipeline could have seen an effect at all.
+        "sciq", "piqa", "arc_easy", "lambada_openai",
+    )
+    limit: int = 200              # questions per task; fixed across all gammas
+    num_fewshot: int = 0
+    seed: int = 1234              # pins doc order AND few-shot contexts (pairing)
+    delta_acc: float = 0.01       # materiality margin, eq. (3.47) in accuracy points
+    positions: tuple = (0, 1, 2)  # 0-indexed: duplicate block 1, 2 or 3
+    kl_free: bool = False         # ablation: drop the output-KL feasibility screen
+    n_boot_sel: int = 2000
+    metrics: dict = field(default_factory=dict)   # task -> metric key, pinned at gamma=0
+
+
 def print_registered(*cfgs) -> None:
     """Print the pre-registered constants (done before any evaluation)."""
     print("=" * 78)
