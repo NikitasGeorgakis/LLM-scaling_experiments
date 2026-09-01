@@ -75,9 +75,52 @@ stream index ranges, SHA-256) for each is recorded automatically in
 
 Built by `ot_depth_runs/make_pools.py --source hf:Skylion007/openwebtext:train`
 (no skip needed -- disjoint by dataset, not by stream position). 3000 docs.
-Recorded in `pools/manifest.json`. Reserved for the E7 distribution-shift
-comparison; not yet consumed, since E7 as designed requires a locked
-candidate and none exists (see ERRATA.md).
+Recorded in `pools/manifest.json`. Used for the E7 distribution-shift check
+(reformulated from the original locked-candidate design; see ERRATA.md):
+a full 35-position barycenter screen on gpt2-large, `runs/e7_openwebtext`.
+0/35 positive gates.
+
+## 5. G_wikitext
+
+Built by the standalone `ot_depth_runs/make_wikitext_pool.py`, not
+`make_pools.py`, for two reasons specific to this source:
+
+1. HuggingFace's `wikitext` dataset requires an explicit config name
+   (`wikitext-103-raw-v1`) that `make_pools.py`'s `hf:<dataset>[:split[:field]]`
+   scheme has no slot for.
+2. WikiText-103-raw is not document-per-row the way Pile/OpenWebText are --
+   it streams as raw lines (mostly single short paragraphs, with blank-line
+   gaps and `" = Article Title = "` headers). Feeding it through
+   `make_pools.py`'s per-row logic as-is would treat each short paragraph as
+   its own "document"; most would fall under `--min-chars` and be dropped,
+   producing a sparse, structurally different pool from the others.
+
+`make_wikitext_pool.py` instead accumulates consecutive non-blank lines into
+pseudo-documents until reaching `--target-chars` (default 5000, chosen to
+match D_sel/E_sel's ~5400-char mean document length), so the resulting pool
+is structurally comparable to the other pools, not just same-format JSONL.
+
+- Source: `wikitext-103-raw-v1`, **train** split (the **test** split was
+  tried first and is too small: only 239/3000 docs came out of it at
+  `target_chars=5000` -- WikiText-103's test split is ~245K tokens total,
+  sized for perplexity benchmarking, not for a 3000-doc pool).
+- `G_wikitext.jsonl`: 3000 docs, `target_chars=5000`, `min_chars=200`,
+  SHA-256 `ad7de3da82c1eb0b97635cb74114840b7c1f7b0c6bd13dae9703aa344fcc7ec6`.
+- Not recorded in `pools/manifest.json` (that file is written only by
+  `make_pools.py`); provenance is this section plus the run script's own
+  printed SHA-256 at build time.
+- Used for the WikiText-103 arm of the E7 distribution-shift check: a full
+  35-position barycenter screen on gpt2-large, `runs/e7_wikitext`. 0/35
+  positive gates.
+
+Both `pseudo_documents()` runs (building `G_wikitext.jsonl`, and separately
+the OpenWebText build for `F_openwebtext.jsonl`) triggered a `Fatal Python
+error: PyGILState_Release` / `Aborted (core dumped)` at interpreter
+shutdown. Both times this was confirmed harmless: the pool file and its
+printed SHA-256 were already complete and written to disk before the crash,
+and `sha256sum` on the resulting file matched the printed hash exactly. This
+is a known-benign shutdown-time issue in the `datasets`/`pyarrow` streaming
+stack, not a data-integrity problem.
 
 ## Summary table
 
@@ -91,7 +134,8 @@ candidate and none exists (see ERRATA.md).
 | D_sel | 1500 | Pile, skip=900 | Yes | E5 |
 | E_sel | 1500 | Pile, skip=900 | Yes | E5 |
 | G_pile | 3000 | Pile, skip=900 | Yes | reserved |
-| F_openwebtext | 3000 | OpenWebText | Yes | reserved (E7) |
+| F_openwebtext | 3000 | OpenWebText | Yes | E7 (0/35) |
+| G_wikitext | 3000 | WikiText-103-raw-v1, train, pseudo-docs | No (built by `make_wikitext_pool.py`) | E7 (0/35) |
 
 **When citing a hash for pool_A or pool_B, always state which version** (see
 each result JSON's own `"pool_sha256"` field, which is authoritative for
