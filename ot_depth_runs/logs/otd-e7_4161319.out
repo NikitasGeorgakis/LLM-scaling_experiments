@@ -1,0 +1,77 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Token indices sequence length is longer than the specified maximum sequence length for this model (1217 > 1024). Running this sequence through the model will result in indexing errors
+gpt2-large blocks=36 L0_sel=2.652352 pool=pools/F_openwebtext.jsonl sha256=510f59e8349315f2
+exact recovery at gamma=0: True (max|dlogit|=0)
+    barycenter i=0: 4.8s
+  pos  0 (F1,F2): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=1: 4.8s
+  pos  1 (F2,F3): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=2: 4.8s
+  pos  2 (F3,F4): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=3: 4.8s
+  pos  3 (F4,F5): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=4: 4.8s
+  pos  4 (F5,F6): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=5: 4.8s
+  pos  5 (F6,F7): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=6: 4.8s
+  pos  6 (F7,F8): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=7: 4.8s
+  pos  7 (F8,F9): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=8: 4.8s
+  pos  8 (F9,F10): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=9: 4.8s
+  pos  9 (F10,F11): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=10: 4.8s
+  pos 10 (F11,F12): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=11: 4.8s
+  pos 11 (F12,F13): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=12: 4.8s
+  pos 12 (F13,F14): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=13: 4.8s
+  pos 13 (F14,F15): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=14: 4.8s
+  pos 14 (F15,F16): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=15: 4.8s
+  pos 15 (F16,F17): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=16: 4.8s
+  pos 16 (F17,F18): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=17: 4.8s
+  pos 17 (F18,F19): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=18: 4.8s
+  pos 18 (F19,F20): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=19: 4.8s
+  pos 19 (F20,F21): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=20: 4.8s
+  pos 20 (F21,F22): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=21: 4.8s
+  pos 21 (F22,F23): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=22: 4.8s
+  pos 22 (F23,F24): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=23: 4.8s
+  pos 23 (F24,F25): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=24: 4.8s
+  pos 24 (F25,F26): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=25: 4.8s
+  pos 25 (F26,F27): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=26: 4.8s
+  pos 26 (F27,F28): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=27: 4.8s
+  pos 27 (F28,F29): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=28: 4.8s
+  pos 28 (F29,F30): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=29: 4.8s
+  pos 29 (F30,F31): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=30: 4.8s
+  pos 30 (F31,F32): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=31: 4.8s
+  pos 31 (F32,F33): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=32: 4.8s
+  pos 32 (F33,F34): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=33: 4.8s
+  pos 33 (F34,F35): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=34: 4.8s
+  pos 34 (F35,F36): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+positive gates: 0/35; best position: None
+done in 3729s -> runs/e7_openwebtext
+=== E7 DONE ===
