@@ -1,0 +1,23 @@
+    step  top_pos   ghat (small-gamma slope)     dL@gamma=1
+     512       22              -1.667319e-03    -1.3313e-04
+    1000        9              -2.569342e-03    -6.9847e-05
+    2000        7              -1.366948e-02    -1.0269e-03
+    4000        7              -1.671028e-02    -1.3501e-03
+    8000        5              -2.270518e-02    -1.9920e-03
+   16000        5              -3.797056e-02    -3.3880e-03
+   32000        5              -3.248800e-02    -2.7637e-03
+   64000        5              -2.962600e-02    -2.3303e-03
+  143000        5              -2.804749e-02    -1.5878e-03
+
+PRIMARY ANALYSIS (pre-registered, the ONLY hypothesis test):
+  Kendall's tau(step order, ghat_i) = -0.6667
+  H1: tau > 0 (slope trends toward zero/positive with more training)
+  one-sided p = 0.9937
+  (tau is rank-based, so ranking by raw step number is exactly
+   equivalent to ranking by log(training_tokens) for Pythia's fixed
+   batch/sequence length -- no token-count conversion needed)
+
+SECONDARY CONFIRMATION CANDIDATE (most negative ghat among early checkpoints, step<=4000):
+  step=4000, position=7, ghat=-1.671028e-02
+  -> run confirmation ONCE on this if desired, per the
+     pre-registered secondary-confirmation clause.

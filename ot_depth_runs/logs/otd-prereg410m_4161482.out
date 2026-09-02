@@ -1,0 +1,469 @@
+=== step512 ===
+`torch_dtype` is deprecated! Use `dtype` instead!
+pythia-410m@step512 blocks=24 L0_sel=5.188128 pool=/home/georgaki/ot_depth_runs/pools/pool_A.jsonl sha256=f252518f92f819ba
+exact recovery at gamma=0: True (max|dlogit|=0)
+    barycenter i=0: 3.2s
+  pos  0 (F1,F2): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=1: 3.1s
+  pos  1 (F2,F3): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=2: 3.1s
+  pos  2 (F3,F4): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=3: 3.1s
+  pos  3 (F4,F5): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=4: 3.1s
+  pos  4 (F5,F6): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=5: 3.1s
+  pos  5 (F6,F7): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=6: 3.1s
+  pos  6 (F7,F8): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=7: 3.1s
+  pos  7 (F8,F9): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=8: 3.1s
+  pos  8 (F9,F10): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=9: 3.1s
+  pos  9 (F10,F11): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=10: 3.1s
+  pos 10 (F11,F12): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=11: 3.1s
+  pos 11 (F12,F13): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=12: 3.1s
+  pos 12 (F13,F14): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=13: 3.1s
+  pos 13 (F14,F15): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=14: 3.1s
+  pos 14 (F15,F16): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=15: 3.1s
+  pos 15 (F16,F17): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=16: 3.1s
+  pos 16 (F17,F18): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=17: 3.1s
+  pos 17 (F18,F19): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=18: 3.1s
+  pos 18 (F19,F20): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=19: 3.1s
+  pos 19 (F20,F21): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=20: 3.1s
+  pos 20 (F21,F22): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=21: 3.1s
+  pos 21 (F22,F23): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=22: 3.1s
+  pos 22 (F23,F24): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+positive gates: 0/23; best position: None
+done in 1081s -> runs/prereg410m_step512
+=== step1000 ===
+`torch_dtype` is deprecated! Use `dtype` instead!
+pythia-410m@step1000 blocks=24 L0_sel=3.745011 pool=/home/georgaki/ot_depth_runs/pools/pool_A.jsonl sha256=f252518f92f819ba
+exact recovery at gamma=0: True (max|dlogit|=0)
+    barycenter i=0: 3.1s
+  pos  0 (F1,F2): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=1: 3.1s
+  pos  1 (F2,F3): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=2: 3.1s
+  pos  2 (F3,F4): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=3: 3.1s
+  pos  3 (F4,F5): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=4: 3.1s
+  pos  4 (F5,F6): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=5: 3.1s
+  pos  5 (F6,F7): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=6: 3.1s
+  pos  6 (F7,F8): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=7: 3.1s
+  pos  7 (F8,F9): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=8: 3.1s
+  pos  8 (F9,F10): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=9: 3.1s
+  pos  9 (F10,F11): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=10: 3.1s
+  pos 10 (F11,F12): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=11: 3.1s
+  pos 11 (F12,F13): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=12: 3.1s
+  pos 12 (F13,F14): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=13: 3.1s
+  pos 13 (F14,F15): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=14: 3.1s
+  pos 14 (F15,F16): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=15: 3.1s
+  pos 15 (F16,F17): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=16: 3.1s
+  pos 16 (F17,F18): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=17: 3.1s
+  pos 17 (F18,F19): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=18: 3.1s
+  pos 18 (F19,F20): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=19: 3.1s
+  pos 19 (F20,F21): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=20: 3.1s
+  pos 20 (F21,F22): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=21: 3.1s
+  pos 21 (F22,F23): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=22: 3.1s
+  pos 22 (F23,F24): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+positive gates: 0/23; best position: None
+done in 1073s -> runs/prereg410m_step1000
+=== step2000 ===
+`torch_dtype` is deprecated! Use `dtype` instead!
+pythia-410m@step2000 blocks=24 L0_sel=3.038830 pool=/home/georgaki/ot_depth_runs/pools/pool_A.jsonl sha256=f252518f92f819ba
+exact recovery at gamma=0: True (max|dlogit|=0)
+    barycenter i=0: 3.1s
+  pos  0 (F1,F2): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=1: 3.1s
+  pos  1 (F2,F3): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=2: 3.1s
+  pos  2 (F3,F4): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=3: 3.1s
+  pos  3 (F4,F5): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=4: 3.1s
+  pos  4 (F5,F6): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=5: 3.1s
+  pos  5 (F6,F7): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=6: 3.1s
+  pos  6 (F7,F8): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=7: 3.1s
+  pos  7 (F8,F9): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=8: 3.1s
+  pos  8 (F9,F10): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=9: 3.1s
+  pos  9 (F10,F11): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=10: 3.1s
+  pos 10 (F11,F12): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=11: 3.1s
+  pos 11 (F12,F13): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=12: 3.1s
+  pos 12 (F13,F14): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=13: 3.1s
+  pos 13 (F14,F15): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=14: 3.1s
+  pos 14 (F15,F16): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=15: 3.1s
+  pos 15 (F16,F17): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=16: 3.1s
+  pos 16 (F17,F18): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=17: 3.1s
+  pos 17 (F18,F19): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=18: 3.1s
+  pos 18 (F19,F20): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=19: 3.1s
+  pos 19 (F20,F21): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=20: 3.1s
+  pos 20 (F21,F22): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=21: 3.1s
+  pos 21 (F22,F23): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=22: 3.1s
+  pos 22 (F23,F24): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+positive gates: 0/23; best position: None
+done in 1070s -> runs/prereg410m_step2000
+=== step4000 ===
+`torch_dtype` is deprecated! Use `dtype` instead!
+pythia-410m@step4000 blocks=24 L0_sel=2.724448 pool=/home/georgaki/ot_depth_runs/pools/pool_A.jsonl sha256=f252518f92f819ba
+exact recovery at gamma=0: True (max|dlogit|=0)
+    barycenter i=0: 3.1s
+  pos  0 (F1,F2): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=1: 3.1s
+  pos  1 (F2,F3): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=2: 3.1s
+  pos  2 (F3,F4): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=3: 3.1s
+  pos  3 (F4,F5): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=4: 3.1s
+  pos  4 (F5,F6): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=5: 3.1s
+  pos  5 (F6,F7): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=6: 3.1s
+  pos  6 (F7,F8): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=7: 3.1s
+  pos  7 (F8,F9): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=8: 3.1s
+  pos  8 (F9,F10): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=9: 3.1s
+  pos  9 (F10,F11): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=10: 3.1s
+  pos 10 (F11,F12): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=11: 3.1s
+  pos 11 (F12,F13): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=12: 3.1s
+  pos 12 (F13,F14): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=13: 3.1s
+  pos 13 (F14,F15): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=14: 3.1s
+  pos 14 (F15,F16): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=15: 3.1s
+  pos 15 (F16,F17): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=16: 3.1s
+  pos 16 (F17,F18): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=17: 3.1s
+  pos 17 (F18,F19): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=18: 3.1s
+  pos 18 (F19,F20): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=19: 3.1s
+  pos 19 (F20,F21): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=20: 3.1s
+  pos 20 (F21,F22): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=21: 3.1s
+  pos 21 (F22,F23): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=22: 3.1s
+  pos 22 (F23,F24): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+positive gates: 0/23; best position: None
+done in 1072s -> runs/prereg410m_step4000
+=== step8000 ===
+`torch_dtype` is deprecated! Use `dtype` instead!
+pythia-410m@step8000 blocks=24 L0_sel=2.553010 pool=/home/georgaki/ot_depth_runs/pools/pool_A.jsonl sha256=f252518f92f819ba
+exact recovery at gamma=0: True (max|dlogit|=0)
+    barycenter i=0: 3.1s
+  pos  0 (F1,F2): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=1: 3.1s
+  pos  1 (F2,F3): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=2: 3.1s
+  pos  2 (F3,F4): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=3: 3.1s
+  pos  3 (F4,F5): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=4: 3.1s
+  pos  4 (F5,F6): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=5: 3.1s
+  pos  5 (F6,F7): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=6: 3.1s
+  pos  6 (F7,F8): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=7: 3.1s
+  pos  7 (F8,F9): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=8: 3.1s
+  pos  8 (F9,F10): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=9: 3.1s
+  pos  9 (F10,F11): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=10: 3.1s
+  pos 10 (F11,F12): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=11: 3.1s
+  pos 11 (F12,F13): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=12: 3.1s
+  pos 12 (F13,F14): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=13: 3.1s
+  pos 13 (F14,F15): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=14: 3.1s
+  pos 14 (F15,F16): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=15: 3.1s
+  pos 15 (F16,F17): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=16: 3.1s
+  pos 16 (F17,F18): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=17: 3.1s
+  pos 17 (F18,F19): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=18: 3.1s
+  pos 18 (F19,F20): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=19: 3.1s
+  pos 19 (F20,F21): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=20: 3.1s
+  pos 20 (F21,F22): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=21: 3.1s
+  pos 21 (F22,F23): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=22: 3.1s
+  pos 22 (F23,F24): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+positive gates: 0/23; best position: None
+done in 1075s -> runs/prereg410m_step8000
+=== step16000 ===
+`torch_dtype` is deprecated! Use `dtype` instead!
+pythia-410m@step16000 blocks=24 L0_sel=2.451367 pool=/home/georgaki/ot_depth_runs/pools/pool_A.jsonl sha256=f252518f92f819ba
+exact recovery at gamma=0: True (max|dlogit|=0)
+    barycenter i=0: 3.1s
+  pos  0 (F1,F2): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=1: 3.1s
+  pos  1 (F2,F3): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=2: 3.1s
+  pos  2 (F3,F4): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=3: 3.1s
+  pos  3 (F4,F5): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=4: 3.1s
+  pos  4 (F5,F6): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=5: 3.1s
+  pos  5 (F6,F7): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=6: 3.1s
+  pos  6 (F7,F8): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=7: 3.1s
+  pos  7 (F8,F9): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=8: 3.1s
+  pos  8 (F9,F10): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=9: 3.1s
+  pos  9 (F10,F11): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=10: 3.1s
+  pos 10 (F11,F12): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=11: 3.1s
+  pos 11 (F12,F13): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=12: 3.1s
+  pos 12 (F13,F14): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=13: 3.1s
+  pos 13 (F14,F15): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=14: 3.1s
+  pos 14 (F15,F16): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=15: 3.1s
+  pos 15 (F16,F17): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=16: 3.1s
+  pos 16 (F17,F18): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=17: 3.1s
+  pos 17 (F18,F19): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=18: 3.1s
+  pos 18 (F19,F20): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=19: 3.1s
+  pos 19 (F20,F21): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=20: 3.1s
+  pos 20 (F21,F22): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=21: 3.1s
+  pos 21 (F22,F23): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=22: 3.1s
+  pos 22 (F23,F24): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+positive gates: 0/23; best position: None
+done in 1071s -> runs/prereg410m_step16000
+=== step32000 ===
+`torch_dtype` is deprecated! Use `dtype` instead!
+pythia-410m@step32000 blocks=24 L0_sel=2.378599 pool=/home/georgaki/ot_depth_runs/pools/pool_A.jsonl sha256=f252518f92f819ba
+exact recovery at gamma=0: True (max|dlogit|=0)
+    barycenter i=0: 3.1s
+  pos  0 (F1,F2): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=1: 3.1s
+  pos  1 (F2,F3): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=2: 3.1s
+  pos  2 (F3,F4): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=3: 3.1s
+  pos  3 (F4,F5): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=4: 3.1s
+  pos  4 (F5,F6): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=5: 3.1s
+  pos  5 (F6,F7): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=6: 3.1s
+  pos  6 (F7,F8): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=7: 3.1s
+  pos  7 (F8,F9): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=8: 3.1s
+  pos  8 (F9,F10): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=9: 3.1s
+  pos  9 (F10,F11): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=10: 3.1s
+  pos 10 (F11,F12): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=11: 3.1s
+  pos 11 (F12,F13): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=12: 3.1s
+  pos 12 (F13,F14): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=13: 3.1s
+  pos 13 (F14,F15): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=14: 3.1s
+  pos 14 (F15,F16): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=15: 3.1s
+  pos 15 (F16,F17): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=16: 3.1s
+  pos 16 (F17,F18): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=17: 3.1s
+  pos 17 (F18,F19): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=18: 3.1s
+  pos 18 (F19,F20): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=19: 3.1s
+  pos 19 (F20,F21): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=20: 3.1s
+  pos 20 (F21,F22): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=21: 3.1s
+  pos 21 (F22,F23): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=22: 3.1s
+  pos 22 (F23,F24): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+positive gates: 0/23; best position: None
+done in 1075s -> runs/prereg410m_step32000
+=== step64000 ===
+`torch_dtype` is deprecated! Use `dtype` instead!
+pythia-410m@step64000 blocks=24 L0_sel=2.322734 pool=/home/georgaki/ot_depth_runs/pools/pool_A.jsonl sha256=f252518f92f819ba
+exact recovery at gamma=0: True (max|dlogit|=0)
+    barycenter i=0: 3.1s
+  pos  0 (F1,F2): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=1: 3.1s
+  pos  1 (F2,F3): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=2: 3.1s
+  pos  2 (F3,F4): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=3: 3.1s
+  pos  3 (F4,F5): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=4: 3.1s
+  pos  4 (F5,F6): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=5: 3.1s
+  pos  5 (F6,F7): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=6: 3.1s
+  pos  6 (F7,F8): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=7: 3.1s
+  pos  7 (F8,F9): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=8: 3.1s
+  pos  8 (F9,F10): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=9: 3.1s
+  pos  9 (F10,F11): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=10: 3.1s
+  pos 10 (F11,F12): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=11: 3.1s
+  pos 11 (F12,F13): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=12: 3.1s
+  pos 12 (F13,F14): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=13: 3.1s
+  pos 13 (F14,F15): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=14: 3.1s
+  pos 14 (F15,F16): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=15: 3.1s
+  pos 15 (F16,F17): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=16: 3.1s
+  pos 16 (F17,F18): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=17: 3.1s
+  pos 17 (F18,F19): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=18: 3.1s
+  pos 18 (F19,F20): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=19: 3.1s
+  pos 19 (F20,F21): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=20: 3.1s
+  pos 20 (F21,F22): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=21: 3.1s
+  pos 21 (F22,F23): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=22: 3.1s
+  pos 22 (F23,F24): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+positive gates: 0/23; best position: None
+done in 1071s -> runs/prereg410m_step64000
+=== step143000 ===
+`torch_dtype` is deprecated! Use `dtype` instead!
+pythia-410m@step143000 blocks=24 L0_sel=2.267201 pool=/home/georgaki/ot_depth_runs/pools/pool_A.jsonl sha256=f252518f92f819ba
+exact recovery at gamma=0: True (max|dlogit|=0)
+    barycenter i=0: 3.1s
+  pos  0 (F1,F2): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=1: 3.1s
+  pos  1 (F2,F3): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=2: 3.1s
+  pos  2 (F3,F4): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=3: 3.1s
+  pos  3 (F4,F5): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=4: 3.1s
+  pos  4 (F5,F6): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=5: 3.1s
+  pos  5 (F6,F7): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=6: 3.1s
+  pos  6 (F7,F8): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=7: 3.1s
+  pos  7 (F8,F9): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=8: 3.1s
+  pos  8 (F9,F10): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=9: 3.1s
+  pos  9 (F10,F11): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=10: 3.1s
+  pos 10 (F11,F12): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=11: 3.1s
+  pos 11 (F12,F13): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=12: 3.1s
+  pos 12 (F13,F14): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=13: 3.1s
+  pos 13 (F14,F15): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=14: 3.1s
+  pos 14 (F15,F16): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=15: 3.1s
+  pos 15 (F16,F17): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=16: 3.1s
+  pos 16 (F17,F18): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=17: 3.1s
+  pos 17 (F18,F19): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=18: 3.1s
+  pos 18 (F19,F20): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=19: 3.1s
+  pos 19 (F20,F21): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=20: 3.1s
+  pos 20 (F21,F22): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=21: 3.1s
+  pos 21 (F22,F23): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+    barycenter i=22: 3.1s
+  pos 22 (F23,F24): gamma*=0       dL=+0.0000e+00  CI=[+0.000e+00,+0.000e+00]
+positive gates: 0/23; best position: None
+done in 1076s -> runs/prereg410m_step143000
+=== PREREG 410M SCREEN DONE ===
