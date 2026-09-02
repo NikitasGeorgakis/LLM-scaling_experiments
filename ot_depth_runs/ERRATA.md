@@ -111,4 +111,32 @@ alone) is designed to guard against. See the paper's Limitations section.
 - Calibration re-verified against `otbli`: 2026-08-30.
 - E1/E3 re-run under corrected rule: 2026-08-30.
 - E2, E4, E5 run under corrected rule: 2026-08-30/31.
+- E6, E7, pre-registered trajectory test run under corrected rule: 2026-08-31/09-01/09-02.
+- Second, smaller gap found via a third, independent implementation
+  (`pythia_gate.py`, a separate working directory not otherwise part of
+  this repository): 2026-09-02.
 - No results computed under the buggy rule were used in the paper.
+
+## Addendum (2026-09-02): missing `dL_raw <= 0` feasibility term
+
+`eval_candidate()`'s feasibility check was missing one of the four terms
+implied by eq. (3.36)/(3.37): a candidate must not increase the raw loss
+at all (`dL_raw <= 0.0`), independent of the KL/representation-drift/
+efficiency-cost bounds. Found by comparing against a third, independent
+implementation of the same protocol (`pythia_gate.py`, in a separate
+working directory, `~/pythia_code/` on Kuma, not part of this repository)
+during an unrelated provenance check -- that implementation's feasibility
+check (`st["mean"] <= 0.0 and kl <= ... and drift <= ... and ce <= ...`)
+includes this term explicitly; `otbli/otbli/task_protocol.py` (the
+downstream-task variant) already had the correct accuracy-domain analogue
+(`rec["acc"] >= A0`, eq. 3.37) from the start, so E6 is unaffected.
+
+**This cannot change any verdict already reported in this repository.**
+Adding a feasibility constraint only ever shrinks the feasible set (never
+grows it), and gamma=0 -- which is always feasible with J=0 by construction
+-- had already won argmin(J) in every single result in E1-E7 and the
+pre-registered trajectory test (no candidate anywhere had J < 0 under the
+existing, looser constraints). A stricter feasible set therefore keeps the
+same winner in every case already computed. Fixed in `otdepth.py`
+(`eval_candidate()`); no re-runs were required, but the fix is in place for
+anything run after 2026-09-02.

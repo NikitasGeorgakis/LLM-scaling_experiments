@@ -469,10 +469,13 @@ def eval_candidate(model, pool, base_losses, base_probes, i, cand, gammas,
             diffs[gi] = losses - base_losses
             rep = gate.drift_num / max(gate.drift_den, 1e-12)
             kl = float(np.mean(kls))
+            dl_mean = float(diffs[gi].mean())
             records[f"{g}"] = {
                 "gamma": float(g), "loss": float(losses.mean()),
-                "dL_raw": float(diffs[gi].mean()), "KL": kl, "rep": rep, "Ceff": c_eff,
-                "feasible": bool(kl <= EPS_KL and rep <= EPS_REP and c_eff <= EPS_EFF)}
+                "dL_raw": dl_mean, "KL": kl, "rep": rep, "Ceff": c_eff,
+                "feasible": bool(dl_mean <= 0.0
+                                and kl <= EPS_KL and rep <= EPS_REP
+                                and c_eff <= EPS_EFF)}
     return records, diffs
 
 
