@@ -1,0 +1,7 @@
+== model: EleutherAI/pythia-2.8b  dataset: pile  node: kh004  job: 4082875 ==
+NVIDIA H100, 95830 MiB
+torch 2.8.0+cu128 | transformers 4.57.6 | cuda True
+########## STAGE 1: SELECTION ##########
+`torch_dtype` is deprecated! Use `dtype` instead!
+/var/spool/slurmd/job4082875/slurm_script: line 31: 3201925 Killed                  python pythia_select.py --model "$MODEL" --dataset "$DATASET" $EXTRA --out results/sel_${TAG}_${DATASET}.json
+slurmstepd: error: Detected 1 oom_kill event in StepId=4082875.batch. Some of the step tasks have been OOM Killed.

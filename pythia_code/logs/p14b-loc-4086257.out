@@ -1,0 +1,8 @@
+[env] device=cuda  torch=2.8.0+cu128
+GATE-SELECTION CONFIG (pre-registered before evaluation):
+  grid Gamma^(0) = [0.0, 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1, 0.2, 0.5, 1.0]
+  eps_KL=0.05  eps_rep=0.05  eps_eff=0.1
+  lambda: L=1.0 KL=0.1 rep=0.05 eff=0.05 gamma=0.01
+  omega (C_eff): F=0.25 T=0.25 M=0.25 P=0.25   refinement Q=8
+
+✓ Completed for revision: step512

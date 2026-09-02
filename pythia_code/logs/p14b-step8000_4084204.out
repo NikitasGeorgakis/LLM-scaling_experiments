@@ -1,0 +1,73 @@
+== EleutherAI/pythia-1.4b @ step8000  node: kh028  job: 4084204 ==
+########## PRIMARY: SELECT ##########
+[env] device=cuda  torch=2.8.0+cu128
+GATE-SELECTION CONFIG (pre-registered before evaluation):
+  grid Gamma^(0) = [0.0, 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1, 0.2, 0.5, 1.0]
+  eps_KL=0.05  eps_rep=0.05  eps_eff=0.1
+  lambda: L=1.0 KL=0.1 rep=0.05 eff=0.05 gamma=0.01
+  omega (C_eff): F=0.25 T=0.25 M=0.25 P=0.25   refinement Q=8
+
+Traceback (most recent call last):
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/huggingface_hub/utils/_http.py", line 403, in hf_raise_for_status
+    response.raise_for_status()
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/EleutherAI/pythia-1.4b/resolve/step8000/config.json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/huggingface_hub/file_download.py", line 1550, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/huggingface_hub/file_download.py", line 1467, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/huggingface_hub/file_download.py", line 283, in _request_wrapper
+    response = _request_wrapper(
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/huggingface_hub/file_download.py", line 307, in _request_wrapper
+    hf_raise_for_status(response)
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/huggingface_hub/utils/_http.py", line 476, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/EleutherAI/pythia-1.4b/resolve/step8000/config.json (Request ID: Root=1-6a7f770b-587f46065e798b6f6538551c;bf10a3e0-3a45-447c-a8e8-05aa516cebc0)
+
+We had to rate limit your IP (192.33.201.246). To continue using our service, create a HF account or login to your existing account, and make sure you pass a HF_TOKEN if you're using the API.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/transformers/utils/hub.py", line 479, in cached_files
+    hf_hub_download(
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/huggingface_hub/file_download.py", line 1014, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/huggingface_hub/file_download.py", line 1121, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/huggingface_hub/file_download.py", line 1665, in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/georgaki/pythia_code/pythia_select.py", line 175, in <module>
+    main()
+  File "/home/georgaki/pythia_code/pythia_select.py", line 79, in main
+    W = PythiaWrapper(args.model, dtype=dtype, device=dev, cache_dir=args.cache_dir, revision=args.revision)
+  File "/home/georgaki/pythia_code/pythia_wrapper.py", line 33, in __init__
+    self.tokenizer = AutoTokenizer.from_pretrained(model_name, cache_dir=cache_dir, revision=revision)
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/transformers/models/auto/tokenization_auto.py", line 1109, in from_pretrained
+    config = AutoConfig.from_pretrained(
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/transformers/models/auto/configuration_auto.py", line 1332, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/transformers/configuration_utils.py", line 662, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/transformers/configuration_utils.py", line 721, in _get_config_dict
+    resolved_config_file = cached_file(
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/transformers/utils/hub.py", line 322, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "/scratch/georgaki/pythia_venv/lib64/python3.9/site-packages/transformers/utils/hub.py", line 553, in cached_files
+    raise OSError(
+OSError: We couldn't connect to 'https://huggingface.co' to load the files, and couldn't find them in the cached files.
+Check your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.

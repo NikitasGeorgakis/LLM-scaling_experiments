@@ -1,0 +1,7 @@
+{
+  "model": "EleutherAI/pythia-1b",
+  "position": 13,
+  "gamma": 0.0,
+  "retained": false,
+  "note": "gamma*=0 at selection"
+}

@@ -1,0 +1,76 @@
+[env] device=cuda  torch=2.8.0+cu128
+GATE-SELECTION CONFIG (pre-registered before evaluation):
+  grid Gamma^(0) = [0.0, 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1, 0.2, 0.5, 1.0]
+  eps_KL=0.05  eps_rep=0.05  eps_eff=0.1
+  lambda: L=1.0 KL=0.1 rep=0.05 eff=0.05 gamma=0.01
+  omega (C_eff): F=0.25 T=0.25 M=0.25 P=0.25   refinement Q=8
+
+[model] EleutherAI/pythia-1.4b@step4000: n_layer=24, d_model=2048, d_ff=8192, dtype=torch.float32, params=1414.6M
+[data] pile: 2,000,000 tokens from 10000 docs (shuffled, seed 123)
+
+[base] SELECTION loss = 2.590605 nats/token (SE 0.035941)
+
+--- Stage A: position screen (gamma=1, tau=0.5) ---
+pos  0 (F_1,F_2): dL = +0.282383 CI95=[+0.270834,+0.294052] (27s)
+pos  1 (F_2,F_3): dL = +0.031724 CI95=[+0.029758,+0.033723] (27s)
+pos  2 (F_3,F_4): dL = +0.052612 CI95=[+0.049401,+0.055795] (23s)
+pos  3 (F_4,F_5): dL = +0.068850 CI95=[+0.064996,+0.072653] (24s)
+pos  4 (F_5,F_6): dL = +0.026604 CI95=[+0.025015,+0.028203] (19s)
+pos  5 (F_6,F_7): dL = +0.034257 CI95=[+0.032269,+0.036402] (20s)
+pos  6 (F_7,F_8): dL = +0.029608 CI95=[+0.027817,+0.031357] (27s)
+pos  7 (F_8,F_9): dL = +0.034418 CI95=[+0.032082,+0.036512] (22s)
+pos  8 (F_9,F_10): dL = +0.020176 CI95=[+0.018958,+0.021461] (27s)
+pos  9 (F_10,F_11): dL = +0.016994 CI95=[+0.015721,+0.018262] (27s)
+pos 10 (F_11,F_12): dL = +0.014592 CI95=[+0.013715,+0.015518] (27s)
+pos 11 (F_12,F_13): dL = +0.013462 CI95=[+0.012478,+0.014403] (27s)
+pos 12 (F_13,F_14): dL = +0.009938 CI95=[+0.009145,+0.010746] (27s)
+pos 13 (F_14,F_15): dL = +0.008108 CI95=[+0.007538,+0.008677] (27s)
+pos 14 (F_15,F_16): dL = +0.007703 CI95=[+0.007123,+0.008257] (27s)
+pos 15 (F_16,F_17): dL = +0.007875 CI95=[+0.007382,+0.008374] (21s)
+pos 16 (F_17,F_18): dL = +0.006415 CI95=[+0.005756,+0.007056] (27s)
+pos 17 (F_18,F_19): dL = +0.006245 CI95=[+0.005593,+0.006911] (25s)
+pos 18 (F_19,F_20): dL = +0.006095 CI95=[+0.005418,+0.006759] (24s)
+pos 19 (F_20,F_21): dL = +0.006022 CI95=[+0.005243,+0.006748] (27s)
+pos 20 (F_21,F_22): dL = +0.006474 CI95=[+0.005579,+0.007293] (27s)
+pos 21 (F_22,F_23): dL = +0.011406 CI95=[+0.010329,+0.012430] (27s)
+pos 22 (F_23,F_24): dL = +0.064019 CI95=[+0.059909,+0.068074] (27s)
+
+Top-2 positions: [19, 18]
+
+--- Stage B: full gate selection at top positions ---
+  position 19:
+    D_rep(1) = 0.01458   C_eff = 0.03710 (flops 0.0384, lat 0.0388, par 0.0356)
+    g=0        dL=+0.000e+00 KL=0.00e+00 Drep=0.00e+00 J=+0.000e+00 feas  <-- coarse best
+    g=0.0001   dL=-9.537e-09 KL=3.60e-10 Drep=1.46e-10 J=+1.855e-02 feas
+    g=0.0003   dL=-9.537e-08 KL=1.04e-09 Drep=1.31e-09 J=+1.855e-02 feas
+    g=0.001    dL=-4.005e-07 KL=1.14e-08 Drep=1.46e-08 J=+1.855e-02 feas
+    g=0.003    dL=-1.326e-06 KL=1.00e-07 Drep=1.31e-07 J=+1.855e-02 feas
+    g=0.01     dL=-3.529e-06 KL=1.11e-06 Drep=1.46e-06 J=+1.855e-02 feas
+    g=0.03     dL=-4.730e-06 KL=1.00e-05 Drep=1.31e-05 J=+1.859e-02 feas
+    g=0.1      dL=+4.948e-05 KL=1.09e-04 Drep=1.46e-04 J=+1.903e-02 INFEAS
+    g=0.2      dL=+2.444e-04 KL=4.14e-04 Drep=5.83e-04 J=+2.045e-02 INFEAS
+    g=0.5      dL=+1.493e-03 KL=2.13e-03 Drep=3.65e-03 J=+2.953e-02 INFEAS
+    g=1        dL=+6.022e-03 KL=7.25e-03 Drep=1.46e-02 J=+5.996e-02 INFEAS
+  position 18:
+    D_rep(1) = 0.01430   C_eff = 0.03709 (flops 0.0384, lat 0.0388, par 0.0356)
+    g=0        dL=+0.000e+00 KL=0.00e+00 Drep=0.00e+00 J=+0.000e+00 feas  <-- coarse best
+    g=0.0001   dL=-1.907e-08 KL=2.70e-11 Drep=1.43e-10 J=+1.854e-02 feas
+    g=0.0003   dL=-6.676e-08 KL=8.84e-10 Drep=1.29e-09 J=+1.854e-02 feas
+    g=0.001    dL=-1.717e-07 KL=8.76e-09 Drep=1.43e-08 J=+1.854e-02 feas
+    g=0.003    dL=-3.910e-07 KL=8.22e-08 Drep=1.29e-07 J=+1.854e-02 feas
+    g=0.01     dL=-6.104e-07 KL=9.14e-07 Drep=1.43e-06 J=+1.855e-02 feas
+    g=0.03     dL=+2.775e-06 KL=8.23e-06 Drep=1.29e-05 J=+1.858e-02 INFEAS
+    g=0.1      dL=+6.285e-05 KL=9.05e-05 Drep=1.43e-04 J=+1.899e-02 INFEAS
+    g=0.2      dL=+2.814e-04 KL=3.51e-04 Drep=5.72e-04 J=+2.033e-02 INFEAS
+    g=0.5      dL=+1.732e-03 KL=1.91e-03 Drep=3.57e-03 J=+2.910e-02 INFEAS
+    g=1        dL=+6.095e-03 KL=6.45e-03 Drep=1.43e-02 J=+5.809e-02 INFEAS
+
+SELECTED (selection set only): position=19, gamma=0.0, tau=0.5  J=+0.0000e+00  dL=+0.0000e+00
+
+--- Baselines at position 19, gamma=1.0 ---
+  naive_average   dL = +5.868435e-03  CI95=(0.005101240396499633, 0.006588295459747313)
+  duplicate       dL = +1.527085e-02  CI95=(0.014005305290222168, 0.01660735392570496)
+  matching: identity 1.5805 vs optimal 1.4455 (8.5% red., 4095/4096 re-matched)
+
+Saved /home/georgaki/pythia_code/results/p14b-step4000.json and /home/georgaki/pythia_code/results/p14b-step4000.json.layer.pt. Confirmation pool untouched. Total 938s.
+✓ Completed for revision: step4000

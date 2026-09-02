@@ -1,0 +1,15 @@
+{
+  "model": "EleutherAI/pythia-1.4b",
+  "position": 1,
+  "gamma": 0.01,
+  "secondary": true,
+  "mean": 4.613399505615235e-06,
+  "ci95": [
+    -3.4572184085845946e-06,
+    1.2457743287086481e-05
+  ],
+  "p": 0.8734550977328706,
+  "material": false,
+  "significant": false,
+  "retained": false
+}

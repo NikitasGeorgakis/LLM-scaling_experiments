@@ -1,0 +1,96 @@
+== model: EleutherAI/pythia-2.8b  dataset: pile  node: kh009  job: 4083183 ==
+NVIDIA H100, 95830 MiB
+torch 2.8.0+cu128 | transformers 4.57.6 | cuda True
+########## STAGE 1: SELECTION ##########
+`torch_dtype` is deprecated! Use `dtype` instead!
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'NeelNanda/pile-10k' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+[env] device=cuda  torch=2.8.0+cu128
+GATE-SELECTION CONFIG (pre-registered before evaluation):
+  grid Gamma^(0) = [0.0, 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1, 0.2, 0.5, 1.0]
+  eps_KL=0.05  eps_rep=0.05  eps_eff=0.1
+  lambda: L=1.0 KL=0.1 rep=0.05 eff=0.05 gamma=0.01
+  omega (C_eff): F=0.25 T=0.25 M=0.25 P=0.25   refinement Q=8
+
+[model] EleutherAI/pythia-2.8b: n_layer=32, d_model=2560, d_ff=10240, dtype=torch.float32, params=2775.2M
+[data] pile: 2,000,000 tokens from 10000 docs (shuffled, seed 123)
+
+[base] SELECTION loss = 1.961744 nats/token (SE 0.031105)
+
+--- Stage A: position screen (gamma=1, tau=0.5) ---
+pos  0 (F_1,F_2): dL = +0.251123 CI95=[+0.238252,+0.264060] (48s)
+pos  1 (F_2,F_3): dL = +0.028220 CI95=[+0.026533,+0.029891] (48s)
+pos  2 (F_3,F_4): dL = +0.039644 CI95=[+0.037154,+0.042329] (48s)
+pos  3 (F_4,F_5): dL = +0.119602 CI95=[+0.113702,+0.125767] (48s)
+pos  4 (F_5,F_6): dL = +0.087079 CI95=[+0.082701,+0.091712] (48s)
+pos  5 (F_6,F_7): dL = +0.068154 CI95=[+0.064188,+0.072055] (48s)
+pos  6 (F_7,F_8): dL = +0.189310 CI95=[+0.178648,+0.200209] (48s)
+pos  7 (F_8,F_9): dL = +0.186610 CI95=[+0.176880,+0.196608] (48s)
+pos  8 (F_9,F_10): dL = +0.134589 CI95=[+0.128765,+0.141096] (48s)
+pos  9 (F_10,F_11): dL = +0.046957 CI95=[+0.044772,+0.049123] (48s)
+pos 10 (F_11,F_12): dL = +0.025920 CI95=[+0.024550,+0.027309] (48s)
+pos 11 (F_12,F_13): dL = +0.038554 CI95=[+0.036608,+0.040369] (48s)
+pos 12 (F_13,F_14): dL = +0.021519 CI95=[+0.020229,+0.022752] (48s)
+pos 13 (F_14,F_15): dL = +0.019553 CI95=[+0.018496,+0.020657] (48s)
+pos 14 (F_15,F_16): dL = +0.022826 CI95=[+0.021599,+0.024016] (48s)
+pos 15 (F_16,F_17): dL = +0.016822 CI95=[+0.015857,+0.017756] (48s)
+pos 16 (F_17,F_18): dL = +0.023873 CI95=[+0.022532,+0.025134] (48s)
+pos 17 (F_18,F_19): dL = +0.035016 CI95=[+0.032844,+0.037222] (48s)
+pos 18 (F_19,F_20): dL = +0.034158 CI95=[+0.032390,+0.035896] (48s)
+pos 19 (F_20,F_21): dL = +0.044226 CI95=[+0.041696,+0.046696] (48s)
+pos 20 (F_21,F_22): dL = +0.070194 CI95=[+0.065653,+0.074789] (48s)
+pos 21 (F_22,F_23): dL = +0.082428 CI95=[+0.077084,+0.087632] (48s)
+pos 22 (F_23,F_24): dL = +0.046994 CI95=[+0.044346,+0.049719] (48s)
+pos 23 (F_24,F_25): dL = +0.038076 CI95=[+0.035876,+0.040200] (48s)
+pos 24 (F_25,F_26): dL = +0.029118 CI95=[+0.026863,+0.031203] (48s)
+pos 25 (F_26,F_27): dL = +0.022805 CI95=[+0.020736,+0.024764] (48s)
+pos 26 (F_27,F_28): dL = +0.024592 CI95=[+0.022584,+0.026455] (48s)
+pos 27 (F_28,F_29): dL = +0.028062 CI95=[+0.025514,+0.030395] (48s)
+pos 28 (F_29,F_30): dL = +0.026462 CI95=[+0.024250,+0.028622] (48s)
+pos 29 (F_30,F_31): dL = +0.060314 CI95=[+0.057299,+0.063484] (48s)
+pos 30 (F_31,F_32): dL = +0.169789 CI95=[+0.161742,+0.178090] (48s)
+
+Top-2 positions: [15, 13]
+
+--- Stage B: full gate selection at top positions ---
+  position 15:
+    D_rep(1) = 0.01666   C_eff = 0.02911 (flops 0.0297, lat 0.0300, par 0.0283)
+    g=0        dL=+0.000e+00 KL=0.00e+00 Drep=0.00e+00 J=+0.000e+00 feas  <-- coarse best
+    g=0.0001   dL=+2.861e-08 KL=7.45e-10 Drep=1.67e-10 J=+1.455e-02 INFEAS
+    g=0.0003   dL=+8.583e-08 KL=1.91e-09 Drep=1.50e-09 J=+1.455e-02 INFEAS
+    g=0.001    dL=+7.629e-08 KL=1.84e-08 Drep=1.67e-08 J=+1.455e-02 INFEAS
+    g=0.003    dL=+2.670e-07 KL=1.62e-07 Drep=1.50e-07 J=+1.456e-02 INFEAS
+    g=0.01     dL=+1.931e-06 KL=1.80e-06 Drep=1.67e-06 J=+1.456e-02 INFEAS
+    g=0.03     dL=+1.606e-05 KL=1.61e-05 Drep=1.50e-05 J=+1.462e-02 INFEAS
+    g=0.1      dL=+1.744e-04 KL=1.78e-04 Drep=1.67e-04 J=+1.527e-02 INFEAS
+    g=0.2      dL=+6.786e-04 KL=7.05e-04 Drep=6.66e-04 J=+1.738e-02 INFEAS
+    g=0.5      dL=+4.138e-03 KL=4.34e-03 Drep=4.17e-03 J=+3.201e-02 INFEAS
+    g=1        dL=+1.682e-02 KL=1.75e-02 Drep=1.67e-02 J=+8.470e-02 INFEAS
+  position 13:
+    D_rep(1) = 0.02007   C_eff = 0.02916 (flops 0.0297, lat 0.0302, par 0.0283)
+    g=0        dL=+0.000e+00 KL=0.00e+00 Drep=0.00e+00 J=+0.000e+00 feas  <-- coarse best
+    g=0.0001   dL=+1.431e-07 KL=8.11e-10 Drep=2.01e-10 J=+1.458e-02 INFEAS
+    g=0.0003   dL=+3.576e-07 KL=2.29e-09 Drep=1.81e-09 J=+1.458e-02 INFEAS
+    g=0.001    dL=+1.130e-06 KL=1.99e-08 Drep=2.01e-08 J=+1.458e-02 INFEAS
+    g=0.003    dL=+2.975e-06 KL=1.73e-07 Drep=1.81e-07 J=+1.458e-02 INFEAS
+    g=0.01     dL=+1.107e-05 KL=1.91e-06 Drep=2.01e-06 J=+1.459e-02 INFEAS
+    g=0.03     dL=+4.436e-05 KL=1.71e-05 Drep=1.81e-05 J=+1.466e-02 INFEAS
+    g=0.1      dL=+2.764e-04 KL=1.89e-04 Drep=2.01e-04 J=+1.540e-02 INFEAS
+    g=0.2      dL=+9.165e-04 KL=7.50e-04 Drep=8.03e-04 J=+1.775e-02 INFEAS
+    g=0.5      dL=+4.974e-03 KL=4.64e-03 Drep=5.02e-03 J=+3.391e-02 INFEAS
+    g=1        dL=+1.955e-02 KL=1.90e-02 Drep=2.01e-02 J=+9.260e-02 INFEAS
+
+SELECTED (selection set only): position=15, gamma=0.0, tau=0.5  J=+0.0000e+00  dL=+0.0000e+00
+
+--- Baselines at position 15, gamma=1.0 ---
+  naive_average   dL = +1.287866e-02  CI95=(0.01214478039741516, 0.013590526700019838)
+  duplicate       dL = +3.101947e-02  CI95=(0.029214805603027343, 0.032719524383544925)
+  matching: identity 3.6514 vs optimal 3.3344 (8.7% red., 4096/4096 re-matched)
+
+Saved results/sel_pythia-2.8b_pile.json and results/sel_pythia-2.8b_pile.json.layer.pt. Confirmation pool untouched. Total 2175s.
+########## STAGE 2: CONFIRMATION ##########
+Loaded selection: EleutherAI/pythia-2.8b  position=15  gamma=0.0  tau=0.5  (J=+0.000e+00)
+
+Selection already returned gamma* = 0: no feasible gamma > 0 beat doing nothing on the selection set. Original model retained exactly; nothing to confirm.
+== finished: ven 14 aoû 2026 15:57:56 CEST ==
