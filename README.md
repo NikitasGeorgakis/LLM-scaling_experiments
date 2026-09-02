@@ -32,6 +32,10 @@ efficiency cost.
 | E3 | GPT-2 Large | all 35 positions, copy_next + hard_ot | 0/70 positive gates |
 | E4 | Pythia-1.4b, 9 training checkpoints | all positions per checkpoint | 0/9 checkpoints |
 | E5 | GPT-2 Large, 3 independent selection pools | all 35 positions per pool | 0/105 positive gates |
+| E6 | Pythia 410m/1b (downstream accuracy) | 14 tasks (10 BigBench + 4 controls) | 0/2 gates retained |
+| E7 (OpenWebText) | GPT-2 Large | all 35 positions | 0/35 positive gates |
+| E7 (WikiText-103) | GPT-2 Large | all 35 positions | 0/35 positive gates |
+| Pre-registered trajectory test | Pythia-410m, 9 checkpoints | Kendall's tau, small-gamma slope vs. training | tau=-0.667, one-sided p=0.9937 (H1 rejected) |
 
 **The finding across every architecture, position, checkpoint, and pool
 tested is a consistent, materiality-gated null: gamma\*=0.** This is treated
@@ -40,7 +44,11 @@ two-stage protocol and certified safe-fallback guarantee are validated
 extensively by this consistency. See the paper's Results and Limitations
 sections for the full discussion, including the max-t multiplicity analysis
 in `ot_depth_runs/` (E5) that illustrates why materiality gating, not
-p-value alone, is essential to the protocol.
+p-value alone, is essential to the protocol. The pre-registered trajectory
+test (see Pre-registration below) is a qualitatively stronger form of
+evidence than the other rows: it commits to a single directional
+hypothesis before running anything, and the hypothesis is cleanly rejected
+rather than merely unconfirmed.
 
 ## A bug was found and fixed during this work
 
@@ -75,9 +83,31 @@ Both packages were run on SCITAS Kuma (EPFL), H100 partition. See:
 
 ## Pre-registration
 
-*[Pre-registration documents (trajectory, timestamp, checklist) to be added
-here -- see the paper's pre-registration statement for the committed
-protocol, materiality threshold (delta=1e-3 nats), and tie-break rule.]*
+`ot_depth_runs/preregistration_trajectory.md` (locked 2026-08-16, before any
+evaluation ran; SHA-256 and UTC timestamp in
+`ot_depth_runs/preregistration_timestamp.txt`) commits to a single,
+falsifiable trend test (paper Section 6.5): does the small-gamma slope of
+the loss response decay toward zero/positive as Pythia-410m trains, per a
+one-sided Kendall's tau test?
+
+**Result: no.** `ot_depth_runs/prereg_trajectory_test_output.txt` (script:
+`prereg_trajectory_test.py`) reports **tau = -0.667, one-sided p = 0.9937**
+against the pre-registered H1 (tau > 0) -- a clean rejection in the
+direction opposite the hypothesis, not an inconclusive result. The
+pre-registered secondary confirmation (the single most negative slope among
+early checkpoints, step=4000 at position 7) was run once as committed:
+gamma\*=0, not retained (`runs/prereg410m_secondary_confirm`).
+
+Both the primary screen (`runs/prereg410m_step*`) and the secondary
+confirmation used this repository's corrected `ot_depth_runs` pipeline
+(see ERRATA.md) to compute the pre-registered objective -- not the
+`pythia_select.py`/`pythia_confirm.py` scripts named in `CHECKLIST.md`,
+which come from an earlier, independent implementation of the same
+protocol (not yet included in this repository). That earlier work ran
+static selection+confirmation across all four Pythia sizes and a separate
+1.4b trajectory sweep, both consistent with the null found throughout this
+repository -- but neither is the specific 410m/Kendall's-tau trend test
+this pre-registration commits to, which is the analysis above.
 
 ## Status
 
